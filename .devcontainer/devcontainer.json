@@ -1,6 +1,9 @@
 {
   "image": "mcr.microsoft.com/devcontainers/universal:2",
-
+  "settings":{
+    "editor.fontLigatures": true,
+    "editor.fontFamily": "Fira Code"
+  },
   "postCreateCommand": "/bin/bash ./.devcontainer/post-create.sh",
   "extensions":[
     "ritwickdey.LiveServer",
