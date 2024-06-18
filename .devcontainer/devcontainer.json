@@ -3,7 +3,13 @@
   "features": {
   },
   "extensions":[
-    "ritwickdey.LiveServer"
+    "ritwickdey.LiveServer",
+    "DEVSENSE.phptools-vscode",
+    "anseki.vscode-color",
+    "kisstkondoros.vscode-gutter-preview",
+    "SirTori.indenticator",
+    "ms-vsliveshare.vsliveshare"
+    
   ],
   "postCreateCommand": "php -S 0.0.0.0:8000"
 }
