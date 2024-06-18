@@ -4,7 +4,6 @@
   },
   "extensions":[
     "ritwickdey.LiveServer",
-    "DEVSENSE.phptools-vscode",
     "anseki.vscode-color",
     "kisstkondoros.vscode-gutter-preview",
     "SirTori.indenticator",
