@@ -37,7 +37,7 @@
                 echo "Mr admin";
             } else {
                 echo "Student";
-            }?>
+            }?>                                                  hello my nigga
 
         <h2>Status:</h2>
         
