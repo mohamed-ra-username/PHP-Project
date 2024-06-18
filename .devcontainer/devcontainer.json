@@ -2,13 +2,12 @@
   "image": "mcr.microsoft.com/devcontainers/universal:2",
   "features": {
   },
+  "postCreateCommand": "/bin/bash ./.devcontainer/post-create.sh",
   "extensions":[
     "ritwickdey.LiveServer",
     "anseki.vscode-color",
     "kisstkondoros.vscode-gutter-preview",
     "SirTori.indenticator",
     "ms-vsliveshare.vsliveshare"
-    
-  ],
-  "postCreateCommand": ["/bin/bash", "php", "-S" ,"0.0.0.0:8000"]
+  ]
 }
