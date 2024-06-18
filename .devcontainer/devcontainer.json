@@ -2,7 +2,8 @@
   "image": "mcr.microsoft.com/devcontainers/universal:2",
   "features": {
   },
-  "extensions":{
+  "extensions":[
     "ritwickdey.LiveServer"
-  }
+  ],
+  "postCreateCommand": "/bin/bash php -S 0.0.0.0:8000"
 }
