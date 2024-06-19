@@ -34,7 +34,7 @@
 
     </tr>
     <tr> 
-<!-- you piece of shit مش عارف الظظظظظظظ -->
+
    <td>mohammed ragan</td>
    <td>1.0</td>
    <td>shinycapybara@gmail.com</td>
