@@ -16,7 +16,7 @@ include "functions.php"?>
             Back
         </button>
     </a>
-    <table>
+    <table class="data">
         
     <tr>
 
