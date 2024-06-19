@@ -12,7 +12,7 @@
 
     <body>
         <h1>-My website-</h1>
-        hello and welcome
+        hello and welcome 
         <?php
             $user ="Admin";
             if ($user == "Admin") {
