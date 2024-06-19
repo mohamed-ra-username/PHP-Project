@@ -9,6 +9,9 @@ html {
 }
 
 .data {
-    border: ;
+    background: black;
+    background-color: black;
+    border-style: double;
+    border: 2px;
     border-color: blueviolet;
 }
