@@ -2,22 +2,28 @@
 <link rel="stylesheet" href="styles.css">
 
 <html lang="en">
-
     <?php
         include "database.php";
-
-        function Display_Student($name)
+        
+        function Student_Student()
         {
-            $student_name = ucfirst($name);
-            echo ' Student: ';
-            echo '<div class="student" >'. $student_name .'</div>';
-            echo '<br>';
-        }
-
-        function Show_Students($array){
-            foreach($array as $name)
+            foreach($students as $name)
             {
-                Display_Student($name);
+                $name = ucfirst();
+                echo ' Student: ';
+                echo '<div class="student" >'. $name .'</div>';
+                echo '<br>';
+            }
+        }
+        
+        function Show_Courses(){
+
+            foreach($students as $name)
+            {
+                $name = ucfirst();
+                echo '<br>';
+                $display_tag = "Course: $name";
+                echo '<div class="Course" >'. $display_tag .'</div>';
             }
         }
     ?>
@@ -37,12 +43,12 @@
                 echo "Mr admin";
             } else {
                 echo "Student";
-            }?>                                                 
-
-        <h2>Status:</h2>
-        
-        <?php
-            Show_Students($students)
-        ?>
+        }?>
+        <a href="Courses.php">
+            <button type="button"> Courses</button>
+        </a>
+        <a href="Students.php">
+            <button type="button"> Students</button>
+        </a>
     </body>
 </html>
