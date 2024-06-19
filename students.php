@@ -1,16 +1,17 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="stylesheet" href="styles.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
 
     <?php
-    include "functions.php"?>
+    include "functions.php" ?>
 
     <a href="index.php">
         <button type="button">
@@ -18,82 +19,81 @@
         </button>
     </a>
     <table class="data">
-        
-    <tr>
+        <thead>
+            <tr>
+                <th>student name</th>
+                <th>student GPA</th>
+                <th>student email</th>
 
-   <th>student name</th>
-   <th>student GPA</th>
-   <th>student email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Mohammed Elsaeed</td>
+                <td>3.5</td>
+                <td>gibberesh@gmail.com</td>
 
-    </tr>
-    <tr>
+            </tr>
+            <tr>
 
-   <td>Mohammed Elsaeed</td>
-   <td>3.5</td>
-   <td>gibberesh@gmail.com</td>
+                <td>mohammed ragan</td>
+                <td>1.0</td>
+                <td>shinycapybara@gmail.com</td>
 
-    </tr>
-    <tr> 
+            </tr>
 
-   <td>mohammed ragan</td>
-   <td>1.0</td>
-   <td>shinycapybara@gmail.com</td>
+            <tr>
+                <td>amr nader</td>
+                <td>2.0</td>
+                <td>lolatnight@gmail.com</td>
+            </tr>
 
-    </tr>
-    <tr>
 
-    <td>amr nader</td>
-    <td>2.0</td>
-    <td>lolatnight@gmail.com</td>
+            <tr>
+                <td>mahmoud abdelgawad</td>
+                <td>0.5</td>
+                <td>theabsentee@gmail.com</td>
+            </tr>
 
-    </tr>
-    <tr>
+            <tr>
+                <td>blank</td>
+                <td>blank</td>
+                <td>blank</td>
+            </tr>
+            <tr>
+                <td>blank</td>
+                <td>blank</td>
+                <td>blank</td>
+            </tr>
+            <tr>
+                <td>blank</td>
+                <td>blank</td>
+                <td>blank</td>
+            </tr>
+            <tr>
+                <td>blank</td>
+                <td>blank</td>
+                <td>blank</td>
+            </tr>
+            <tr>
+                <td>blank</td>
+                <td>blank</td>
+                <td>blank</td>
+            </tr>
+            <tr>
+                <td>blank</td>
+                <td>blank</td>
+                <td>blank</td>
+            </tr>
+            <tr>
+                <td>blank</td>
+                <td>blank</td>
+                <td>blank</td>
+            </tr>
+        </tbody>
 
-   <td>mahmoud abdelgawad</td>
-   <td>0.5</td>
-   <td>theabsentee@gmail.com</td>
-
-    </tr>
-    <tr>
-<td>blank</td>
-<td>blank</td>
-<td>blank</td>
-   </tr>
-   <tr>
-<td>blank</td>
-<td>blank</td>
-<td>blank</td>
-   </tr>
-   <tr>
-<td>blank</td>
-<td>blank</td>
-<td>blank</td>
-   </tr>
-   <tr>
-<td>blank</td>
-<td>blank</td>
-<td>blank</td>
-   </tr>
-   <tr>
-<td>blank</td>
-<td>blank</td>
-<td>blank</td>
-   </tr>
-   <tr>
-<td>blank</td>
-<td>blank</td>
-<td>blank</td>
-   </tr>
-   <tr>
-<td>blank</td>
-<td>blank</td>
-<td>blank</td>
-   </tr>
-
-     
 
     </table>
 </body>
+
 </html>
-
-
