@@ -1,3 +1,3 @@
 <?php
-    $students = ["mohamed","ahmed","amr"];
+    $students = ["mohamed","ahmed","amr"."nigga"];
 ?>
