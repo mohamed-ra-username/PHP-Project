@@ -20,10 +20,10 @@
             } else {
                 echo "Student";
         }?>
-        <a href="Courses.php">
+        <a href="courses.php">
             <button type="button"> Courses</button>
         </a>
-        <a href="Students.php">
+        <a href="students.php">
             <button type="button"> Students</button>
         </a>
     </body>

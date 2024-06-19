@@ -1,5 +1,4 @@
-<?php
-include "functions.php"?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +7,9 @@ include "functions.php"?>
     <title>Document</title>
 </head>
 <body>
+
+<?php
+include "functions.php"?>
 
     <a href="index.php">
         <button type="button">

@@ -2,7 +2,7 @@
     $students = [
         "mohamed" =>["math","english"],
         "ahmed"=>["math"],
-        "amr"=>[none],
+        "amr"=>[],
         "medo"=>["math","english"]
     ];
 ?>
