@@ -12,6 +12,8 @@
             Back
         </button>
     </a>
+    <br>
+    Show_Courses();
     
 </body>
 </html>
