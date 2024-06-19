@@ -11,8 +11,13 @@
 <body>
 
     <?php
-    include "functions.php" ?>
-
+    include "database.php" ?>
+    <?php
+        // foreach($students as $item)
+        //             {
+        //                 $name = ucfirst($item["name"]);
+        //             } 
+    ?>
     <a href="index.php">
         <button type="button">
             Back

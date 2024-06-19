@@ -9,16 +9,23 @@
 </head>
 <body>
 
-<?php
-include "functions.php"?>
 
-    <a href="index.php">
+<a href="index.php">
         <button type="button">
             Back
         </button>
     </a>
     <br>
-    Show_Courses();
-    
+    <?php
+        require "database.php";
+        foreach($courses as $item)
+        {
+            $name = ucfirst($item);
+            echo '<br>';
+            $display_tag = "Course: $name";
+            echo '<div class="Course" >'. $display_tag .'</div>';
+        }
+
+    ?>
 </body>
 </html>
