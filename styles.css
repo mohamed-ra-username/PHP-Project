@@ -21,6 +21,6 @@ html {
 }
 .data th{
     color:white;
-    border-color: blue;
+    border: 1in thin blue;
     background-color:rgb(4, 165, 39);
 }

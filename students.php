@@ -24,7 +24,6 @@
                 <th>student name</th>
                 <th>student GPA</th>
                 <th>student email</th>
-
             </tr>
         </thead>
         <tbody>
@@ -32,14 +31,12 @@
                 <td>Mohammed Elsaeed</td>
                 <td>3.5</td>
                 <td>gibberesh@gmail.com</td>
-
             </tr>
-            <tr>
 
+            <tr>
                 <td>mohammed ragan</td>
                 <td>1.0</td>
                 <td>shinycapybara@gmail.com</td>
-
             </tr>
 
             <tr>
@@ -47,7 +44,6 @@
                 <td>2.0</td>
                 <td>lolatnight@gmail.com</td>
             </tr>
-
 
             <tr>
                 <td>mahmoud abdelgawad</td>
@@ -60,39 +56,43 @@
                 <td>blank</td>
                 <td>blank</td>
             </tr>
+
             <tr>
                 <td>blank</td>
                 <td>blank</td>
                 <td>blank</td>
             </tr>
+
             <tr>
                 <td>blank</td>
                 <td>blank</td>
                 <td>blank</td>
             </tr>
+
             <tr>
                 <td>blank</td>
                 <td>blank</td>
                 <td>blank</td>
             </tr>
+
             <tr>
                 <td>blank</td>
                 <td>blank</td>
                 <td>blank</td>
             </tr>
+
             <tr>
                 <td>blank</td>
                 <td>blank</td>
                 <td>blank</td>
             </tr>
+
             <tr>
                 <td>blank</td>
                 <td>blank</td>
                 <td>blank</td>
             </tr>
         </tbody>
-
-
     </table>
 </body>
 
