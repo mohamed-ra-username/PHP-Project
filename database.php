@@ -23,7 +23,7 @@
             "description" => ""
         ]
     ];
-    function add_course($tilte, $instructor, $description){
+    function add_course($title, $instructor, $description){
         global $courses;
         $courses[] = [
             "title" => $title,
