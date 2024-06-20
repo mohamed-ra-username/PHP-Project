@@ -6,5 +6,29 @@
         ["name" => "amr nader"     , "gpa" => 2.0, "email" => "lolatnight@gmail.com"],
         ["name" => "mahmoud abdelgawad"    , "gpa" => 3, "email" => "gagag@gmail.com"]
     ];
-    $courses = ["english","math","science"];
+    $courses = [
+        [
+            "title" => "english",
+            "instructor" => "Mohamed Ragab",
+            "description" => "A pro teatcher"
+        ],
+        [
+            "title" => "",
+            "instructor" =>"",
+            "description" => ""
+        ],
+        [
+            "title" => "",
+            "instructor" =>"",
+            "description" => ""
+        ]
+    ];
+    function add_course($tilte, $instructor, $description){
+        global $courses;
+        $courses[] = [
+            "title" => $title,
+            "instructor" =>$instructor,
+            "description" => $instructor];
+    }
+    add_course("mohamed","test","test")
 ?>

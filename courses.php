@@ -9,12 +9,8 @@
     <title>Document</title>
 </head>
 <body>
-
-
-    <br>
     <?php
-        require "database.php";
-        // $current_row = 0;
+        $current_row = 0;
         require_once "database.php";
         require_once "functions.php";
 
@@ -29,15 +25,18 @@
                         echo '<th class = "admin-head">' . 'Admin Panel' . '</th>';
                     }
 
-                    foreach(["name", "gpa", "email"] as $title) {
-                        echo '<th>' . "student $title" . '</th>';
+                    foreach(["ID", "Subject", "Description", "Instructor"] as $title) {
+                        echo '<th>' . " $title" . '</th>';
                     }
 
                 echo '</tr>';
             echo '</thead>';
 
             echo '<tbody>';
-                foreach($students as  $item){
+                foreach($courses as  $item){
+                    $title = $item["title"];
+                    $description = $item["description"];
+                    $instructor = $item["instructor"];
                     
                     echo '<tr>';
                         if ($user == "Admin"){
@@ -46,12 +45,10 @@
                             echo '<button class = "button btn-danger" type="button">DELETE</button>';
                             echo '</td>';
                         }
-                        foreach($item as $value){
-                            echo '<td>';
-                            echo "$value";;
-
-                            echo  '</td>';
-                        }
+                            echo "<td>" . ++$current_row . "</td>";
+                            echo "<td> $title</td>";
+                            echo "<td> $description</td>";
+                            echo "<td> $instructor</td>";
                     echo '</tr>';
                 } 
             echo '</tbody>';
