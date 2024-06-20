@@ -22,9 +22,10 @@
             } else {
                 echo "Student";
             
+            }
             Students_page_Button();
             Courses_page_Button();
-        }?>
+        ?>
 
     </body>
 </html>
