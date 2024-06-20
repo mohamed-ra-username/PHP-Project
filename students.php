@@ -31,6 +31,11 @@
                         echo '<th>' . " $title" . '</th>';
                     }
 
+                    if ($user == "Admin"){
+                        echo "<th> Enrolled in </th>";
+                    }
+
+
                 echo '</tr>';
             echo '</thead>';
 
@@ -39,7 +44,9 @@
                     $name = $item["name"];
                     $email = $item["email"];
                     $gpa = $item["gpa"];
+                    $owned_courses = $item["enrolled_courses"];
                     
+
                     echo '<tr>';
                         if ($user == "Admin"){
                             echo '<td class = "admin-panel">';
@@ -51,6 +58,19 @@
                             echo "<td class = 'name'> $name</td>";
                             echo "<td class = 'email'> $email</td>";
                             echo "<td class = 'small'> $gpa</td>";
+                            if ($user == "Admin")
+                            {
+                                echo '<td>';
+                                for ($i=0; $i < count($owned_courses); $i++) { 
+                                    echo $courses[$i]["title"];
+                                    if ($i + 1< count($owned_courses))
+                                        echo ", ";
+                                }
+                                if(count($owned_courses) ==0){
+                                    Echo "None";
+                                }
+                                echo '</td>';
+                            }
                     echo '</tr>';
                 } 
             echo '</tbody>';
