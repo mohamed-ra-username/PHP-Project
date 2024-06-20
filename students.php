@@ -27,8 +27,8 @@
                         echo '<th class = "admin-head">' . 'Admin Panel' . '</th>';
                     }
 
-                    foreach(["ID", "name","email", "gpa"] as $title) {
-                        echo '<th>' . "student $title" . '</th>';
+                    foreach(["ID", "Name","Email", "GPA"] as $title) {
+                        echo '<th>' . " $title" . '</th>';
                     }
 
                 echo '</tr>';
