@@ -12,7 +12,7 @@
 <body>
 
     <?php
-        // $current_row = 0;
+        $current_row = 0;
         require_once "database.php";
         require_once "functions.php";
 
@@ -27,7 +27,7 @@
                         echo '<th class = "admin-head">' . 'Admin Panel' . '</th>';
                     }
 
-                    foreach(["name", "gpa", "email"] as $title) {
+                    foreach(["ID", "name","email", "gpa"] as $title) {
                         echo '<th>' . "student $title" . '</th>';
                     }
 
@@ -36,6 +36,9 @@
 
             echo '<tbody>';
                 foreach($students as  $item){
+                    $name = $item["name"];
+                    $email = $item["email"];
+                    $gpa = $item["gpa"];
                     
                     echo '<tr>';
                         if ($user == "Admin"){
@@ -44,12 +47,10 @@
                             echo '<button class = "button btn-danger" type="button">DELETE</button>';
                             echo '</td>';
                         }
-                        foreach($item as $value){
-                            echo '<td>';
-                            echo "$value";;
-
-                            echo  '</td>';
-                        }
+                        echo "<td>" . ++$current_row . "</td>";
+                            echo "<td> $name</td>";
+                            echo "<td> $email</td>";
+                            echo "<td> $gpa</td>";
                     echo '</tr>';
                 } 
             echo '</tbody>';
@@ -71,39 +72,6 @@
         echo '</table>'
     ?>
 
-<!-- 
-    <table class="data">
-        <thead>
-            <tr>
-                <th>student name</th>
-                <th>student GPA</th>
-                <th>student email</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Mohammed Elsaeed</td>
-                <td>3.5</td>
-                <td>gibberesh@gmail.com</td>
-            </tr>
-
-            <tr>
-                <td>mohammed ragan</td>
-                <td>1.0</td>
-                <td>shinycapybara@gmail.com</td>
-            </tr>
-
-            <tr>
-                <td>amr nader</td>
-                <td>2.0</td>
-                <td>lolatnight@gmail.com</td>
-            </tr>
-
-            <tr>
-                <td>mahmoud abdelgawad</td>
-                <td>0.5</td>
-                <td>theabsentee@gmail.com</td>
-            </tr> -->
 </body>
 
 </html>
