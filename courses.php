@@ -10,11 +10,6 @@
 <body>
 
 
-<a href="index.php">
-        <button type="button">
-            Back
-        </button>
-    </a>
     <br>
     <?php
         require "database.php";
