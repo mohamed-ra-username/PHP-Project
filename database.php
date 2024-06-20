@@ -39,7 +39,5 @@
             "email" => $email
         ];
     }
-    add_student("newteacher",10,"myemail");
-    add_course("title","inst","desc")
-
+    
 ?>
