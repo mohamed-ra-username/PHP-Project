@@ -34,8 +34,8 @@
             "description" => "Thrilling experience of learning baby material."
         ],
         [
-            "title" => "Mohamed Elsaeed",
-            "instructor" => "Brainrot",
+            "title" => "Brainrot",
+            "instructor" => "Mohamed Elsaeed",
             "description" => "Enjoy your 24 hours with a stream of tiktok and youtube mixed. "
         ]
     ];
