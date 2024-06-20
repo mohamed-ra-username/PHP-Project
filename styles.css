@@ -9,13 +9,18 @@ a {
 
 .Header{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
     
     
 }
 
+.sidebar{
+    position: absolute;
+}
+
 .nav{
-    display: flex;
+    display: ab;
     flex-direction: column;
     height: 100%;
 }
