@@ -28,7 +28,18 @@
         $courses[] = [
             "title" => $title,
             "instructor" =>$instructor,
-            "description" => $instructor];
+            "description" => $description
+        ];
     }
-    add_course("mohamed","test","test")
+    function add_student($name, $gpa, $email){
+        global $students;
+        $students[] = [
+            "name" => $name,
+            "gpa" =>$gpa,
+            "email" => $email
+        ];
+    }
+    add_student("newteacher",10,"myemail");
+    add_course("title","inst","desc")
+
 ?>
