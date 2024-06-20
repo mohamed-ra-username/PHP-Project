@@ -1,5 +1,7 @@
 
 .button {
+    position:relative;
+    align-content: center;
     font-size:15px;
     font-family: sans-serif;
     transition-duration: 0.2s;
