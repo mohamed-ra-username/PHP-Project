@@ -4,23 +4,27 @@
         [
             "name" => "Mohammed Elsaeed",
             "gpa" => 3.5,
-            "email" => "gibberesh@gmail.com"
+            "email" => "gibberesh@gmail.com",
+            "enrolled_courses" => [0,1]
         ],
         [
             "name" => "ahmed",
             "gpa" => 5,
-            "email" => "shinycapybara@gmail.com"
+            "email" => "shinycapybara@gmail.com",
+            "enrolled_courses" => [0]
         ],
         [
             "name" => "amr nader",
             "gpa" => 2.0,
-            "email" => "lolatnight@gmail.com"
+            "email" => "lolatnight@gmail.com",
+            "enrolled_courses" => [1]
         ],
         [
             "name" => "mahmoud abdelgawad",
             "gpa" => 3,
-            "email" => "gagag@gmail.com
-            "]
+            "email" => "gagag@gmail.com",
+            "enrolled_courses" => []
+        ]
     ];
     $courses = [
         [
@@ -47,12 +51,13 @@
             "description" => $description
         ];
     }
-    function add_student($name, $gpa, $email){
+    function add_student($name, $gpa, $email,$enrolled_courses){
         global $students;
         $students[] = [
             "name" => $name,
             "gpa" =>$gpa,
-            "email" => $email
+            "email" => $email,
+            "enrolled_courses" => $enrolled_courses
         ];
     }
 
