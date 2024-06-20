@@ -14,18 +14,17 @@
         <h1>-My website-</h1>
         hello and welcome 
         <?php
-            include 'database.php';
+            require 'database.php';
+            require "functions.php";
             // $user ="Admin";
             if ($user == "Admin") {
                 echo "Mr admin";
             } else {
                 echo "Student";
+            
+            Students_page_Button();
+            Courses_page_Button();
         }?>
-        <a href="courses.php">
-            <button type="button"> Courses</button>
-        </a>
-        <a href="students.php">
-            <button type="button"> Students</button>
-        </a>
+
     </body>
 </html>
