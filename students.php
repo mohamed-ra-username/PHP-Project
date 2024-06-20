@@ -47,10 +47,10 @@
                             echo '<button class = "button btn-danger" type="button">DELETE</button>';
                             echo '</td>';
                         }
-                        echo "<td>" . ++$current_row . "</td>";
-                            echo "<td> $name</td>";
-                            echo "<td> $email</td>";
-                            echo "<td> $gpa</td>";
+                        echo "<td class = 'small'>" . ++$current_row . "</td>";
+                            echo "<td class = 'name'> $name</td>";
+                            echo "<td class = 'email'> $email</td>";
+                            echo "<td class = 'small'> $gpa</td>";
                     echo '</tr>';
                 } 
             echo '</tbody>';

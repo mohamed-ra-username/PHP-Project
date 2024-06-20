@@ -17,8 +17,9 @@ table.data td {
     background: rgb(160, 157, 157);
     padding: 10px 60px;
     
-    
-    /* width: 50px; */
+}
+table.data .small{
+    padding:3ch ;
 }
 
 table.data .admin-head{
@@ -50,4 +51,3 @@ table.data {
     border-spacing:0px;
     
 }
-
