@@ -1,9 +1,10 @@
 <?php
+    $user = 'Admin';
     $students = [
-        ["name"=>"mohamed","courses" =>["math","english"]],
-        ["name"=>"ahmed","courses"=>["math"]],
-        ["name"=>"amr","courses"=>[]],
-        ["name"=>"medo","courses"=>["math","english"]]
+        ["name" => "Mohammed Elsaeed" , "gpa" => 3.5, "email" => "gibberesh@gmail.com"],
+        ["name" => "ahmed"   , "gpa" => 5, "email" => "shinycapybara@gmail.com"],
+        ["name" => "amr nader"     , "gpa" => 2.0, "email" => "lolatnight@gmail.com"],
+        ["name" => "mahmoud abdelgawad"    , "gpa" => 3, "email" => "g"]
     ];
     $courses = ["english","math","science"];
 ?>

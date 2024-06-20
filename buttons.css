@@ -1,0 +1,32 @@
+
+.button {
+    font-size:15px;
+    font-family: sans-serif;
+    transition-duration: 0.2s;
+    color:white;
+    border: 2px solid black; 
+    border-radius:50px;
+    margin:5px;
+  }
+
+.btn-info {
+    background-color:#2f60cc;
+}
+.btn-success {
+    background-color: green;
+}
+.btn-danger {
+    background-color:red;
+}
+
+.button:hover {
+    border: 1px solid white;
+    border-radius:4px;
+}
+
+.button:active{
+    color: black;
+    font-size:16px;
+    transition-timing-function: ease-out;
+    transform: translateY(4px);
+}
