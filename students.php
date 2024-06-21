@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="table.css">
+    <link rel="stylesheet" href="table+.css">
     <link rel="stylesheet" href="buttons.css">
 
     <meta charset="UTF-8">
@@ -11,45 +11,47 @@
 </head>
 <body>
 
-<?php
+    <?php
         $current_row = 0;
         require_once "database.php";
         require_once "functions.php";
 
 
         Back_Button();
+    ?>
+        <table class = "data">
         
-        echo '<table class = "data">';
-        
-            echo '<thead>';
-                echo '<tr>';
-                    if ($user == "Admin")
-                    {
-                        echo '<th class = "admin-head">' . 'Admin Panel' . '</th>';
-                    }
-
-                    foreach(["ID", "Name","Email", "GPA"] as $title) {
-                        echo '<th>' . " $title" . '</th>';
-                    }
-
+            <thead>
+                <tr>
+                    <?php
+                        if ($user == "Admin")
+                            echo '<th class = "admin-head">' . 'Admin Panel' . '</th>';
+                    ?>
+                    <th>ID</th>
+                    <th>NAME</th>
+                    <th>EMAIL</th>
+                    <th>GPA</th>
+                    
+                    <?php
                     if ($user == "Admin"){
                         echo "<th> Enrolled in </th>";
                     }
+                    ?>
+                </tr>
+            </thead>
 
+            <tbody>
+                <?php
+                    while ($row = mysqli_fetch_assoc($all_students)) {
+                        $id = $row['id'] ;
+                        $name = $row['name'] ;
+                        $gpa = $row['gpa'] ;
+                        $email = $row['email'] ;
+                        $owned_courses = $row["owned_courses"];
+                ?>
 
-                echo '</tr>';
-            echo '</thead>';
-
-            echo '<tbody>';
-                while ($row = mysqli_fetch_assoc($all_students)) {
-                    $id = $row['id'] ;
-                    $name = $row['name'] ;
-                    $gpa = $row['gpa'] ;
-                    $email = $row['email'] ;
-                    $owned_courses = $row["owned_courses"];
-
-
-                    echo '<tr>';
+                <tr>
+                    <?php
                         if ($user == "Admin"){
                             echo '<td class = "admin-panel">';
                             echo '<button class = "button btn-info" type="button">EDIT</button>';
@@ -60,15 +62,14 @@
                             echo "<td class = 'name'> $name</td>";
                             echo "<td class = 'email'> $email</td>";
                             echo "<td class = 'small'> $gpa</td>";
+                            
                             if ($user == "Admin")
                             {
                                 echo '<td>';
                                 if($owned_courses == null)
                                     Echo "None";
-                                
                                 else
                                 {
-                                    // meow
                                     $owned_courses = str_split($owned_courses);
                                     $i =0;
                                     foreach ($owned_courses as $idx) {
@@ -82,31 +83,26 @@
                                         echo ", ";
                                         
                                     }
-                                    // for ($i=1; $i <= count($owned_courses); $i++) { 
-                                    // }
                                 }
-                                echo '</td>';
-                            }
-                    echo '</tr>';
-                } 
-            echo '</tbody>';
+                                ?>
+                                </td>
+                    </tr>
+            </tbody>
+            <?php
+                if ($user == "Admin"){
+                    echo '<tfoot>';
+                        echo '<tr>';
+                            echo '<th>';
+                                echo  '<button class = "button btn-success" type="button">';
+                                    echo 'Create new';
+                                echo '</button>';
+                            echo '</th>';
+                        echo '</tr>';
+                    echo '</tfoot>';
+                }
+            ?>
 
-            
-
-            if ($user == "Admin"){
-                echo '<tfoot>';
-                    echo '<tr>';
-                        echo '<th>';
-                            echo  '<button class = "button btn-success" type="button">';
-                                echo 'Create new';
-                            echo '</button>';
-                        echo '</th>';
-                    echo '</tr>';
-                echo '</tfoot>';
-            }
-
-        echo '</table>'
-    ?>
+        </table>
 
 
 </body>
