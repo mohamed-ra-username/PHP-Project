@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="table+.css">
+    <link rel="stylesheet" href="table.css">
     <link rel="stylesheet" href="buttons.css">
 
     <meta charset="UTF-8">
