@@ -11,10 +11,12 @@
 </head>
 <body>
 
-    <?php
+<?php
         $current_row = 0;
         require_once "database.php";
         require_once "functions.php";
+        // require_once "test.php";
+
 
         Back_Button();
         
@@ -40,12 +42,13 @@
             echo '</thead>';
 
             echo '<tbody>';
-                foreach($students as  $item){
-                    $name = $item["name"];
-                    $email = $item["email"];
-                    $gpa = $item["gpa"];
-                    $owned_courses = $item["enrolled_courses"];
-                    
+                while ($row = mysqli_fetch_assoc($all_students)) {
+                    $id = $row['id'] ;
+                    $name = $row['name'] ;
+                    $gpa = $row['gpa'] ;
+                    $email = $row['email'] ;
+                    $owned_courses = $row["owned_courses"];
+
 
                     echo '<tr>';
                         if ($user == "Admin"){
@@ -61,13 +64,23 @@
                             if ($user == "Admin")
                             {
                                 echo '<td>';
-                                for ($i=0; $i < count($owned_courses); $i++) { 
-                                    echo $courses[$i]["title"];
-                                    if ($i + 1< count($owned_courses))
-                                        echo ", ";
-                                }
-                                if(count($owned_courses) ==0){
+                                if($owned_courses == null)
                                     Echo "None";
+                                
+                                else
+                                {
+                                    $owned_courses = str_split($owned_courses);
+
+                                    
+                                    for ($i=1; $i <= count($owned_courses); $i++) { 
+                                        $courses = mysqli_query($conn, "SELECT title FROM courses where id=$i;");
+                                        $course = mysqli_fetch_assoc($courses);
+
+                                        echo $course ? $course["title"] : "<err> Course Not Found </err>";
+
+                                        if ($i< count($owned_courses))
+                                        echo ", ";
+                                    }
                                 }
                                 echo '</td>';
                             }
@@ -91,6 +104,7 @@
 
         echo '</table>'
     ?>
+
 
 </body>
 
