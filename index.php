@@ -12,6 +12,7 @@
         <nav class="nav">
             <span>Dashboard</span>
             <div class="sidebar">
+                <a href="index.php" class="sideitem"> <i class="fa fa-home"></i> Home</a>
                 <a href="courses.php" class="sideitem"> <i class="fa fa-graduation-cap"></i>Courses</a>
                 <a href="students.php" class="sideitem"> <i class="fa fa-address-card"></i>Students</a>
             </div>
@@ -28,8 +29,8 @@
             <div class="cont">
                 <h1>Welcome Back, 
                 <?php
-                    $user = "Admine";
-                    if ($user == "Admine")
+                    include "database.php";
+                    if ($user == "Admin")
                     {
                         echo "Admin";
                     }else
@@ -45,9 +46,8 @@
                             <span >Total Students</span>
                             <span class = "php">
                                 <?php 
-                                    echo '5';
-                                    // require "database.php";
-                                    // mysqli_num_rows($all_students);
+                                    require "database.php";
+                                    echo mysqli_num_rows($all_students);
                                 ?>
                             </span>
                         </a>
@@ -58,9 +58,8 @@
                             <span >Total Courses</span>
                             <span class = "php">
                                 <?php 
-                                    echo '5';
-                                    // require "database.php";
-                                    // mysqli_num_rows($all_students);
+                                    require "database.php";
+                                    echo mysqli_num_rows($all_courses);
                                 ?>
                             </span>
                         </a>

@@ -27,7 +27,8 @@ html,body{
     padding: 20px;
     border-bottom: 2px solid lightgray;
     border-radius: 15px;
-    
+    flex-grow: 0;
+    flex-shrink: 0;
 }
 
 .Home {
@@ -60,6 +61,8 @@ html,body{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    flex-grow: 0;
+    flex-shrink: 0;
     width: 230px;
     border-right: 2px solid lightgray;
     margin-left: 5px;
@@ -115,7 +118,7 @@ html,body{
 
 .livecont{
     display: flex;
-    padding: 40px 130px;
+    padding: 5vh 17vh 5vh 3vh;
     margin-right: 20px;
     border-radius: 15px;
     border: 1px solid lightgray;
