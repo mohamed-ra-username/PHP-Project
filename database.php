@@ -1,4 +1,5 @@
-$user = 'Admin';
+<?php $user = 'Admin';
+
     // $students = [
     //     [
     //         "name" => "Mohammed Elsaeed",
@@ -79,3 +80,4 @@ $user = 'Admin';
     function delete($id){
         $sql = "DELETE FROM `students` WHERE $id";
     }
+?>
