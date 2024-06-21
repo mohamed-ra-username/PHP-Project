@@ -41,6 +41,13 @@
                 <div class="main_cont">
                     <div class="livecont">
                         <?php
+                            $dbServername = "localhost";
+                            $dbUsername = "root";
+                            $dbPassword = "";
+                            $dbName = "students";
+
+                            $conn= mysqli_connect($dbServername, $dbUsername, $dbPassword, $dbName);
+
                             $var = mysqli_query($conn, "SELECT * FROM students;");
                             mysqli_num_rows($var);
                             echo var_dump($var);

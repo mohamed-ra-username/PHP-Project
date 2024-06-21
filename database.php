@@ -59,7 +59,7 @@ $user = 'Admin';
     //         "enrolled_courses" => $enrolled_courses
     //     ];
     // }
-    
+
     $dbServername = "localhost";
     $dbUsername = "root";
     $dbPassword = "";
