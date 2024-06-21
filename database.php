@@ -62,7 +62,7 @@
     // }
 
     $dbServername = "localhost";
-    $dbUsername = "test";
+    $dbUsername = "root";
     $dbPassword = "";
     $dbName = "students";
     
