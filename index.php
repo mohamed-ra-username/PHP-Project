@@ -26,7 +26,18 @@
                 </div>
             </header>
             <div class="cont">
-                content here
+                <h1>Welcome Back, 
+                <?php
+                    $user = "Admine";
+                    if ($user == "Admine")
+                    {
+                        echo "Admin";
+                    }else
+                    {
+                        echo "User";
+                    }
+                ?> 
+                </h1>
             </div>
         </div>
     </div>
