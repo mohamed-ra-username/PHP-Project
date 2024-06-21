@@ -19,7 +19,7 @@
         
         <div class="content">
             <header class="Header">
-                <span><i class="fa fa-home"></i>Home</span>
+                <span class="Home"><i class="fa fa-home"></i>Home</span>
                 <div class="Search">
                     <i class="fa fa-search"></i>
                     <input type="search" placeholder="Search">
@@ -39,14 +39,31 @@
                 ?> 
                 </h1>
                 <div class="main_cont">
-                    <div class="livecont">
-                        <?php
-                            require "database.php";
-                            mysqli_num_rows($all_students);
-                        ?>
+                    <div class="livecont num1">
+                        <a class="livecont1" href="">
+                            <i class="fa fa-group"></i>
+                            <span >Total Students</span>
+                            <span class = "php">
+                                <?php 
+                                    echo '5';
+                                    // require "database.php";
+                                    // mysqli_num_rows($all_students);
+                                ?>
+                            </span>
+                        </a>
                     </div>
-                    <div class="livecont">
-                    hi
+                    <div class="livecont num2">
+                        <a class="livecont2" href="">
+                        <i class="fa fa-graduation-cap"></i>
+                            <span >Total Courses</span>
+                            <span class = "php">
+                                <?php 
+                                    echo '5';
+                                    // require "database.php";
+                                    // mysqli_num_rows($all_students);
+                                ?>
+                            </span>
+                        </a>
                     </div>
                 </div>
             </div>
