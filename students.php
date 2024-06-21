@@ -69,6 +69,7 @@
                                 
                                 else
                                 {
+                                    // meow
                                     $owned_courses = str_split($owned_courses);
                                     $i =0;
                                     foreach ($owned_courses as $idx) {
