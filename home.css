@@ -97,7 +97,17 @@ html,body{
     border-radius: 15px;
 }
 
+.cont{
+    flex-direction: column;
+    margin-left: 40px;
+}
+
 .cont h1{
-    padding-left: 40px;
     padding-top: 15px;
 }
+
+.main_cont{
+    display: flex;
+    margin-left: 20px;
+}
+

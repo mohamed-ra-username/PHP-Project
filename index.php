@@ -38,6 +38,18 @@
                     }
                 ?> 
                 </h1>
+                <div class="main_cont">
+                    <div class="livecont">
+                        <?php
+                            $var = mysqli_query($conn, "SELECT * FROM students;");
+                            mysqli_num_rows($var);
+                            echo var_dump($var);
+                        ?>
+                    </div>
+                    <div class="livecont">
+                    hi
+                    </div>
+                </div>
             </div>
         </div>
     </div>
