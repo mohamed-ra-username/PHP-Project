@@ -21,20 +21,14 @@
         <table class = "data">
             <thead>
                 <tr>
-                    <?php
-                        if ($user == "Admin")
-                            echo '<th class = "admin-head">' . 'Admin Panel' . '</th>';
-                    ?>
+                    <?php if ($user == "Admin") echo '<th class = "admin-head">' . 'Admin Panel' . '</th>';?>
+
                     <th>ID</th>
                     <th>NAME</th>
                     <th>EMAIL</th>
                     <th>GPA</th>
                     
-                    <?php
-                    if ($user == "Admin"){
-                        echo "<th> Enrolled in </th>";
-                    }
-                    ?>
+                    <?php if ($user == "Admin") echo "<th> Enrolled in </th>";?>
                 </tr>
             </thead>
 
@@ -89,11 +83,10 @@
                 <tr>
                     <th>
                         <?php
-                            if ($user == "Admin"){
-                                echo  '<button class = "button btn-success" type="button">';
-                                    echo 'Create new';
-                                echo '</button>';
-                            }
+                            if ($user == "Admin")
+                            echo  '<button class = "button btn-success" type="button">
+                            Create new
+                            </button>';
                         ?>
                     </th>
                 </tr>
