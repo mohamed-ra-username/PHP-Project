@@ -48,6 +48,7 @@
                         $gpa = $row['gpa'] ;
                         $email = $row['email'] ;
                         $owned_courses = $row["owned_courses"];
+                    }
                 ?>
 
                 <tr>
@@ -84,6 +85,7 @@
                                         
                                     }
                                 }
+                                }
                                 ?>
                                 </td>
                     </tr>
@@ -103,8 +105,5 @@
             ?>
 
         </table>
-
-
-</body>
-
+    </body>
 </html>
