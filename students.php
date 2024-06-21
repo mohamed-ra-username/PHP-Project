@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="table.css">
     <link rel="stylesheet" href="buttons.css">
 
     <meta charset="UTF-8">
@@ -15,7 +15,6 @@
         $current_row = 0;
         require_once "database.php";
         require_once "functions.php";
-        // require_once "test.php";
 
 
         Back_Button();
