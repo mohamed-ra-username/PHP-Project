@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="table.css">
     <link rel="stylesheet" href="buttons.css">
 
     <meta charset="UTF-8">
@@ -15,7 +15,6 @@
         $current_row = 0;
         require_once "database.php";
         require_once "functions.php";
-        // require_once "test.php";
 
 
         Back_Button();
@@ -69,18 +68,22 @@
                                 
                                 else
                                 {
+                                    // meow
                                     $owned_courses = str_split($owned_courses);
-
-                                    
-                                    for ($i=1; $i <= count($owned_courses); $i++) { 
-                                        $courses = mysqli_query($conn, "SELECT title FROM courses where id=$i;");
+                                    $i =0;
+                                    foreach ($owned_courses as $idx) {
+                                        $id = intval($idx);
+                                        $courses = mysqli_query($conn, "SELECT title FROM courses where id=$id;");
                                         $course = mysqli_fetch_assoc($courses);
-
+    
                                         echo $course ? $course["title"] : "<err> Course Not Found </err>";
-
-                                        if ($i< count($owned_courses))
+    
+                                        if (++$i < count($owned_courses))
                                         echo ", ";
+                                        
                                     }
+                                    // for ($i=1; $i <= count($owned_courses); $i++) { 
+                                    // }
                                 }
                                 echo '</td>';
                             }

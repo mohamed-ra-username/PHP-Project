@@ -62,9 +62,9 @@
     // }
 
     $dbServername = "localhost";
-    $dbUsername = "test";
+    $dbUsername = "root";
     $dbPassword = "";
-    $dbName = "students";
+    $dbName = "test";
     
     $conn= mysqli_connect($dbServername, $dbUsername, $dbPassword, $dbName);
     
