@@ -1,26 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <link rel="stylesheet" href="table.css">
-    <link rel="stylesheet" href="buttons.css">
+    <head>
+        <link rel="stylesheet" href="table.css">
+        <link rel="stylesheet" href="buttons.css">
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
 
-    <?php
-        $current_row = 0;
-        require_once "database.php";
-        require_once "functions.php";
+    <body>
+        <?php
+            $current_row = 0;
+            require_once "database.php";
+            require_once "functions.php";
 
-
-        Back_Button();
-    ?>
+            Back_Button();
+        ?>
         <table class = "data">
-        
             <thead>
                 <tr>
                     <?php
@@ -86,20 +84,20 @@
                     }
                 ?>
             </tbody>
-            <?php
-                if ($user == "Admin"){
-                    echo '<tfoot>';
-                        echo '<tr>';
-                            echo '<th>';
+
+            <tfoot>
+                <tr>
+                    <th>
+                        <?php
+                            if ($user == "Admin"){
                                 echo  '<button class = "button btn-success" type="button">';
                                     echo 'Create new';
                                 echo '</button>';
-                            echo '</th>';
-                        echo '</tr>';
-                    echo '</tfoot>';
-                }
-            ?>
-
+                            }
+                        ?>
+                    </th>
+                </tr>
+            </tfoot>
         </table>
     </body>
 </html>
