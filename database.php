@@ -63,7 +63,7 @@
 
     $dbServername = "localhost";
     $dbUsername = "test";
-    $dbPassword = "@";
+    $dbPassword = "";
     $dbName = "students";
     
     $conn= mysqli_connect($dbServername, $dbUsername, $dbPassword, $dbName);
