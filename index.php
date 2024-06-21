@@ -3,38 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Document</title>
+    <title>Dashboard</title>
 </head>
 <body>
     <div class="container">
-        <header class="Header">
-            <span>Home</span>
-            <div class="search-bar">
-                <i class="fa fa-search"></i>
-                <input type="search" placeholder="Search">
+        <nav class="nav">
+            <span>Dashboard</span>
+            <div class="sidebar">
+                <a href="courses.php" class="sideitem"> <i class="fa fa-graduation-cap"></i>Courses</a>
+                <a href="students.php" class="sideitem"> <i class="fa fa-address-card"></i>Students</a>
             </div>
-        </header>
-
-        <div class="Main_div">
-            <aside class="sidebar">
-                <div class="logo">Dashboard</div>
-                <nav class="nav">
-
-                    <a href="courses.php" class="nav-item">
-                        <i class="fa fa-graduation-cap"></i> Courses
-                    </a>
-                    
-                    <a href="students.php" class="nav-item">
-                        <i class="fa fa-address-card"></i> Students
-                    </a>
-                    
-                </nav>
-            </aside>
-            <main class="main-content">
-                <!-- Main content goes here -->
-            </main>
+        </nav>
+        
+        <div class="content">
+            <header class="Header">
+                <span><i class="fa fa-home"></i>Home</span>
+                <div class="Search">
+                    <i class="fa fa-search"></i>
+                    <input type="search" placeholder="Search">
+                </div>
+            </header>
+            <div class="cont">
+                content here
+            </div>
         </div>
     </div>
 </body>

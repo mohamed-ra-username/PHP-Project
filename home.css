@@ -1,0 +1,96 @@
+html,body{
+    background-color: white;
+    width: 99%;
+    height: 99%;
+}
+
+.container{
+    display: flex;
+    height: 99%;
+
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    width: 99%;
+    margin-left: 15px;
+}
+
+.cont{
+    display: flex;
+}
+
+.Header{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    border-bottom: 2px solid lightgray;
+    border-radius: 15px;
+    
+}
+
+.content span {
+    font-size: 30px;
+}
+
+.content span i {
+    margin-right: 8px;
+}
+
+.Search input{
+    font-size: 17px;
+    padding: 6px;
+    border: none;
+    border-radius: 8px;
+    background-color: #e1e1e1;
+}
+
+.Search input:focus{
+    outline: none;
+}
+
+.Search i{
+    font-size: 20px;
+    margin-right: 7px;
+    padding-top: 7px;
+}
+
+.nav{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 230px;
+    border-right: 2px solid lightgray;
+    
+}
+
+.nav span{
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    padding-left: 30px;
+    padding-top: 15px;
+}
+
+.sidebar{
+    display: flex;
+    flex-direction: column;
+}
+
+.sideitem{
+    margin-bottom: 7px ;
+    text-decoration: none;
+    color: #019654;
+    padding: 15px;
+}
+
+.sideitem i {
+    padding-right:7px ;
+}
+
+.sideitem:hover{
+    background-color: #EDF6F2;
+    transition: 1s;
+    border-radius: 15px;
+}

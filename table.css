@@ -1,29 +1,3 @@
-html,body {
-    background-color: fff;
-    height: 100%;
-}
-
-a {
-    text-decoration: none;
-}
-
-.Header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    
-    
-}
-
-.sidebar{
-    position: absolute;
-}
-
-.nav{
-    display: ab;
-    flex-direction: column;
-    height: 100%;
-}
 
 table.data td {
     display: inline-flexbox;
