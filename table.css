@@ -12,16 +12,27 @@
     align-items: center;
     justify-content: space-around;
 }
-.pop-up .content-box{
+.pop-up form {
+    backdrop-filter: blur(5px);
     /* background-color: rgba(211, 211, 211, 0.219); */
+    display: flex;
     padding: 20px;
     border: 2px solid lightgrey;
-    border-radius: 2px;
+    flex-direction: column;
+    /* border-radius: 2px; */
+    border-radius: 15px;
+    /* box-shadow: 2px 1px; */
 }
-.pop-up .content-box div{
-    justify-content: center;
-    width: max-content;
-    justify-self: center;
+.content{
+    display:flex !important;
+    justify-content: space-between !important;
+}
+.pop-up label{
+    font-family: sans-serif;
+    font-weight: bolder;
+}
+.pop-up .span {
+    align-self: center;
 }
 .table-container {
     background-color: #fff;

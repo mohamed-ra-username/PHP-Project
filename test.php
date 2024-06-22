@@ -11,66 +11,63 @@
 ?> 
 <link rel="stylesheet" href="table.css">
 <div class="pop-up">
-    <div class ="content-box">
-        <label for="title">Edit User:</label>
+    <form action="test.php" method="post" class ="content-box">
+        <label for="title">Edit User</label>
         <br>
-        <div>
-            <span >name:</span> <input type="text" name="" id="">
 
+        <div class="content">
+            <label for="name" >name:</label>
+            <input
+            required
+            type="text" 
+            id="std_name" 
+            placeholder="Amr Nader"
+            name="name" 
+            >
         </div>
-        <div>
-            <span >email:</span> <input type="text" name="" id="">
+        <div class="content">
+            
+            <label for="email">email:</label>
+            <input
+            type="email"
+            id="std_email"
+            name="email"
+            autocomplete="on"
+            placeholder= "Example@mail.com"
+            >
         </div>
         
-        <div>
-            <span >gpa:</span> <input type="text" name="" id="">
-        </div>
-        <div>
-            <span >id:</span> <input type="text" name="" id="">
+        <div class = "content">
 
-        </div>
-        <div>
+            <label for="gpa">gpa:</label>
 
+            <input
+            required
+            id="gpa"
+            name ="std_gpa"
+            type="number"
+            step=".1"
+            min='0'
+            max='4'
+            placeholder="x"
+            />
+        </div>
+
+
+        <span style = "align-self: center;">
             <button  type="submit">Submit</button>
-        </div>
+        </span>
 
-    </div>
+    </form>
 
 </div>
 <form action="test.php" method="post">
+
     <input type="hidden" name="id" value="69" />
+    
 
-    <label for="name" >name:</label><br>
-    <input
-    required
-    type="text" 
-    id="std_name" 
-    placeholder="Amr Nader"
-    name="name" 
-    ><br>
-
-    <label for="email">email:</label><br>
-    <input
-    type="email"
-    id="std_email"
-    name="email"
-    autocomplete="on"
-    placeholder= "Example@mail.com"
-    >
     <br><br>
 
-    <label for="gpa">gpa:</label>
-    <br>
-    <input
-    required
-    id="gpa"
-    name ="std_gpa"
-    type="number"
-    step=".1"
-    min='0'
-    max='4'
-    placeholder="x"
-    />
 
     <input type="submit" name ="user-submit" value="Submit">
 </form> 
