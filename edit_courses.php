@@ -81,26 +81,15 @@
 </div>
     <?php
         
-        if (isset($_POST["name"]))
+        if (isset($get["subject"]))
         {
-            $name = $_POST["name"];
-            $gpa = $_POST["gpa"];
-            $email = $_POST["email"];
-
-            $sql = "UPDATE `students` SET `id`='$id',`name`='$name',`gpa`='$gpa',`email`='$email'WHERE $id";
-
-            $test = mysqli_query($conn, $sql);
-            
-        }
-        // if (isset($get["subject"]))
-        // {
-        //     $subject = $get["subject"];
-        //     $description = $get["description"];
-        //     $instructor = $get["instructor"];
+            $subject = $get["subject"];
+            $description = $get["description"];
+            $instructor = $get["instructor"];
     
-        //     $sql ='INSERT INTO students'.  "(`id`, `name`, `gpa`, `email`, `owned_courses`)".  'VALUES' . "(NULL, '$subject', '$description', '$instructor', NULL)";
-        //     $test = mysqli_query($conn, $sql);
-        // }
+            $sql = "UPDATE `students` SET `name` = `$name`, `gpa` = `$gpa`, `email` = `$email` WHERE `students`.`id` = $id";
+            $test = mysqli_query($conn, $sql);
+        }
     ?>
 </body>
 </html>
