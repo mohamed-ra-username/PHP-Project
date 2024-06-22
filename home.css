@@ -169,3 +169,64 @@ html,body{
 .livecont2 span{
     position: absolute;
 }
+
+.create-student-form{
+    display: flex;
+    flex-direction: column;
+    width: 240px;
+    padding: 20px;
+    border: 1px solid lightgray;
+    border-radius: 15px;
+}
+
+.create-student-form input{
+    padding: 6px;
+    border-radius: 8px;
+    border: 1px solid lightgray;
+}
+
+.create-student-form label{
+    margin-bottom: 10px;
+}
+
+.create-student-form button{
+    padding: 7px;
+    border-radius: 8px;
+    border: 1px solid lightgray;
+}
+
+.create-student-form button:hover{
+    transition: 2s;
+    background-color: #b9ffe1;
+}
+
+
+.create-course-form{
+    display: flex;
+    flex-direction: column;
+    width: 240px;
+    padding: 20px;
+    border: 1px solid lightgray;
+    border-radius: 15px;
+}
+
+.create-course-form input{
+    padding: 6px;
+    border-radius: 8px;
+    border: 1px solid lightgray;
+}
+
+.create-course-form label{
+    margin-bottom: 10px;
+}
+
+.create-course-form button{
+    padding: 7px;
+    border-radius: 8px;
+    border: 1px solid lightgray;
+}
+
+.create-course-form button:hover{
+    transition: 2s;
+    background-color: #b9ffe1;
+}
