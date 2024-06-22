@@ -15,6 +15,7 @@ echo var_dump($_POST)
 ?> 
 
 <link rel="stylesheet" href="table.css">
+
 <div class="pop-up">
     <form action="test.php" method="post" class ="content-box">
         <input type="hidden" name="id" value="idk">
