@@ -1,4 +1,8 @@
-<?php include "database.php";
+<?php
+//  include "database.php";
+echo var_dump($_POST)
+
+
 // echo var_dump($_SERVER);
 // echo '<br>';
 // echo '<br>';
@@ -9,49 +13,51 @@
 // echo '<br>';
 // echo '<br>';
 ?> 
+
 <link rel="stylesheet" href="table.css">
 <div class="pop-up">
     <form action="test.php" method="post" class ="content-box">
+        <input type="hidden" name="id" value="idk">
         <label for="title">Edit User</label>
         <br>
 
-        <div class="content">
+        <section class="content">
             <label for="name" >name:</label>
             <input
             required
+            name="name" 
             type="text" 
             id="std_name" 
             placeholder="Amr Nader"
-            name="name" 
             >
-        </div>
-        <div class="content">
+        </section>
+        <section class="content">
             
             <label for="email">email:</label>
             <input
+            name="email"
             type="email"
             id="std_email"
-            name="email"
             autocomplete="on"
             placeholder= "Example@mail.com"
             >
-        </div>
+        </section>
         
-        <div class = "content">
+        <section class = "content">
 
             <label for="gpa">gpa:</label>
 
             <input
             required
-            id="gpa"
-            name ="std_gpa"
+            name="gpa"
             type="number"
+            id ="std_gpa"
             step=".1"
             min='0'
             max='4'
             placeholder="x"
             />
-        </div>
+        </section>
 
 
         <span style = "align-self: center;">

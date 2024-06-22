@@ -1,9 +1,6 @@
 .Header{
     margin-bottom: 50px;
 }
-.content {
-    flex: 1;
-}
 .pop-up {
     position: absolute;
     width: 99%;
@@ -12,28 +9,29 @@
     align-items: center;
     justify-content: space-around;
 }
+
 .pop-up form {
     backdrop-filter: blur(5px);
-    /* background-color: rgba(211, 211, 211, 0.219); */
+    background-color: rgba(211, 211, 211, 0.219);
     display: flex;
     padding: 20px;
     border: 2px solid lightgrey;
     flex-direction: column;
-    /* border-radius: 2px; */
     border-radius: 15px;
-    /* box-shadow: 2px 1px; */
 }
-.content{
+
+.pop-up form section.content {
+    
     display:flex !important;
     justify-content: space-between !important;
+    flex: 1;
 }
-.pop-up label{
+
+.pop-up form label{
     font-family: sans-serif;
     font-weight: bolder;
 }
-.pop-up .span {
-    align-self: center;
-}
+
 .table-container {
     background-color: #fff;
     padding: 20px;
