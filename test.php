@@ -3,15 +3,6 @@
 echo var_dump($_POST)
 
 
-// echo var_dump($_SERVER);
-// echo '<br>';
-// echo '<br>';
-// echo var_dump($_SESSION);
-// echo '<br>';
-// echo '<br>';
-// echo var_dump($_REQUEST);
-// echo '<br>';
-// echo '<br>';
 ?> 
 
 <link rel="stylesheet" href="table.css">
@@ -25,18 +16,20 @@ echo var_dump($_POST)
 
         <section class="content">
             <label class="text" for="Name" >Name:</label>
+
             <input
             required
             name="Name" 
             type="text" 
             id="Name" 
             autocomplete="given-name"
-            placeholder="Amr Nader"
+            placeholder="John Doe"
             >
         </section>
+
         <section class="content">
-            
-            <label class="text" for="Email">Email:</label>
+            <label class="text" for="Email">Email :</label>
+
             <input
             name="Email"
             type="email"
@@ -47,8 +40,7 @@ echo var_dump($_POST)
         </section>
         
         <section class = "content">
-
-            <label class="text" for="GPA">GPA:</label>
+            <label class="text" for="GPA">GPA :</label>
 
             <input
             required
@@ -58,7 +50,7 @@ echo var_dump($_POST)
             step=".1"
             min='0'
             max='4'
-            placeholder="x"
+            placeholder="0-4"
             />
         </section>
 
