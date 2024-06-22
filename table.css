@@ -38,8 +38,13 @@
     box-shadow: 2px 2px 2px 2px 2px  rgb(0, 0, 0);
 }
 .button:hover {
-    /* translate: -1px -1px; */
-    width: 70px;
+    translate: -1px -1px;
+    transform: scale(1.1);
+    box-shadow: 3px 3px 0px 0px rgb(0, 0, 0);
+}
+.btn-success:hover {
+    translate: -1px -1px;
+    transform: scale(.9);
     box-shadow: 3px 3px 0px 0px rgb(0, 0, 0);
 }
 .button:active{
