@@ -13,8 +13,8 @@ html,body{
 .content{
     display: flex;
     flex-direction: column;
-    width: 99%;
-    margin-left: 15px;
+    width: calc(99% - 230px);
+    margin-left: 250px;
 }
 
 .cont{
@@ -58,7 +58,7 @@ html,body{
 }
 
 .nav{
-    display: flex;
+    position: fixed;
     flex-direction: column;
     justify-content: flex-start;
     flex-grow: 0;
@@ -66,15 +66,16 @@ html,body{
     width: 230px;
     border-right: 2px solid lightgray;
     margin-left: 5px;
-    
+    height: 100%;
 }
 
 .nav span{
+    display: flex;
     font-size: 24px;
     font-weight: bold;
-    margin-bottom: 30px;
-    padding-left: 30px;
-    padding-top: 15px;
+    padding-left: 25%;
+    padding-top: 27px;
+    margin-bottom: 15px;
 }
 
 .sidebar{
@@ -83,7 +84,8 @@ html,body{
 }
 
 .sideitem{
-    margin-bottom: 7px ;
+    margin-top: 10px;
+
     text-decoration: none;
     color: #019654;
     padding: 15px;

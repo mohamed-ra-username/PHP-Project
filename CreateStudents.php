@@ -57,11 +57,15 @@
                 <input class="forminput" type="text" id="student-name" name="name" required>
                 <br>
                 <label for="gpa">GPA:</label>
-                <input class="forminput" type="number" step="0.01" id="gpa" name="gpa" required>
+                <input class="forminput" type="number" step="0.01" id="gpa" min="0" max="4" name="gpa" required>
                 <br>
                 <label for="email">email:</label>
                 <input class="forminput" type="email" id="email" name="email" required>
                 <br>
+                <?php
+                include "database.php";
+
+                ?>
                 <button type="submit">Add Student</button>
             </form>
         </div>
