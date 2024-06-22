@@ -36,7 +36,7 @@
 
     <?php
         include "database.php";
-
+        
         $get = $_GET;
         if (isset($get["name"]))
         {
@@ -45,6 +45,15 @@
             $email = $get["email"] || NULL;
     
             $sql ='INSERT INTO students'.  "(`id`, `name`, `gpa`, `email`, `owned_courses`)".  'VALUES' . "(NULL, '$name', '$gpa', '$email', NULL)";
+            $test = mysqli_query($conn, $sql);
+        }
+        if (isset($get["subject"]))
+        {
+            $subject = $get["subject"];
+            $description = $get["description"];
+            $instructor = $get["instructor"] || NULL;
+    
+            $sql ='INSERT INTO students'.  "(`id`, `name`, `gpa`, `email`, `owned_courses`)".  'VALUES' . "(NULL, '$subject', '$description', '$instructor', NULL)";
             $test = mysqli_query($conn, $sql);
         }
     ?>
