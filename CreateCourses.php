@@ -84,7 +84,7 @@
             $description = $get["description"];
             $instructor = $get["instructor"];
     
-            $sql ='INSERT INTO students'.  "(`id`, `name`, `gpa`, `email`, `owned_courses`)".  'VALUES' . "(NULL, '$subject', '$description', '$instructor', NULL)";
+            $sql ='INSERT INTO courses'.  "(`id`, `title`, `description`, `instructor`, `owned_courses`)".  'VALUES' . "(NULL, '$subject', '$description', '$instructor', NULL)";
             $test = mysqli_query($conn, $sql);
         }
     ?>
