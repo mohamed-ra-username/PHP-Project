@@ -11,6 +11,26 @@
         <title>Document</title>
     </head>
 
+    <script>
+function editStudent(id) {
+    window.location.href = 'courses.php?id=' + id;
+}
+</script>
+
+
+<script>
+function deleteStudent(id) {
+
+    if (confirm('Are you sure you want to delete this student?')) {
+        var row = document.getElementById('row_' + id);
+        if (row) {
+            row.parentNode.removeChild(row);
+        }
+    }
+}
+</script>
+
+
     <body>
         <?php
             $current_row = 0;
@@ -84,8 +104,8 @@
                         echo '<tr>';
                             if ($user == "Admin"){
                                 echo '<td class = "admin-panel">';
-                                echo '<button onclick="myFunction" class = "button btn-info" type="button"><span>EDIT</span></button>';
-                                echo '<button class = "button btn-danger" type="button"><span>DELETE</span></button>';
+                                echo '<button onclick="editStudent(' . $id . ')" class="button btn-info" type="button"><span>EDIT</span></button>';
+                                echo '<button onclick="deleteStudent(' . $id . ')" class="button btn-danger" type="button"><span>DELETE</span></button>';
                                 echo '</td>';
                             }
                             echo "<td class = 'small'>" . ++$current_row . "</td> <td class = 'name'> $name</td> <td class = 'email'> $email</td> <td class = 'small'> $gpa</td>";
