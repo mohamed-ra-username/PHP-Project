@@ -14,20 +14,17 @@
     </head>
 
     <script>
-
-function editStudent(id) {
-    window.location.href = 'edit_student.php?id=' + id;
-}
+        
+        function editStudent(id) {
+            window.location.href = 'edit_student.php?id=' + id;
+        }
 </script>
-
-
-
 <script>
-function deleteStudent(id) {
-    if (confirm('Are you sure you want to delete this student?')) {
-        fetch('delete_student.php?id=' + id, {
-            method: 'DELETE'
-        })
+    function deleteStudent(id) {
+        if (confirm('Are you sure you want to delete this student?')) {
+            fetch('delete_student.php?id=' + id, {
+                method: 'DELETE'
+            })
         .then(response => response.json())
         .then(data => {
             if (data.success) {
@@ -35,6 +32,7 @@ function deleteStudent(id) {
                 if (row) {
                     row.parentNode.removeChild(row);
                 }
+                window.location.href = 'Students.php';
             } else {
                 alert('Error deleting student: ' + data.message);
             }
