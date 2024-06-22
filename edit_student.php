@@ -89,20 +89,11 @@
             $email = $_POST["email"];
 
             
-            $sql = "UPDATE `students` SET `name` = `$name`, `gpa` = `$gpa`, `email` = `$email` WHERE `students`.`id` = $id";
+            $sql = "UPDATE `students` SET `name` = '$name', `gpa` = '$gpa', `email` = '$email' WHERE `students`.`id` = 104";
 
             $test = mysqli_query($conn, $sql);
 
         }
-        // if (isset($get["subject"]))
-        // {
-        //     $subject = $get["subject"];
-        //     $description = $get["description"];
-        //     $instructor = $get["instructor"];
-    
-        //     $sql ='INSERT INTO students'.  "(`id`, `name`, `gpa`, `email`, `owned_courses`)".  'VALUES' . "(NULL, '$subject', '$description', '$instructor', NULL)";
-        //     $test = mysqli_query($conn, $sql);
-        // }
     ?>
 </body>
 </html>
