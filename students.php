@@ -23,15 +23,32 @@
         <nav class="nav">
             <span>Dashboard</span>
             <div class="sidebar">
-                <a href="index.php" class="sideitem"> <i class="fa fa-home"></i> Home</a>
-                <a href="courses.php" class="sideitem"> <i class="fa fa-graduation-cap"></i>Courses</a>
-                <a href="students.php" class="sideitem"> <i class="fa fa-address-card"></i>Students</a>
+                <a href="Home.php" class="sideitem"> <i class="fa fa-home"></i> Home</a>
+                <a href="Courses.php" class="sideitem"> <i class="fa fa-graduation-cap"></i>Courses</a>
+                <a href="Students.php" class="sideitem"> <i class="fa fa-address-card"></i>Students</a>
             </div>
         </nav>
 
         <div class="content">
             <header class="Header">
-                <span class="Home"><i class="fa fa-home"></i>Home</span>
+                <?php
+                    $url = $_SERVER['REQUEST_URI'];
+                    $url = substr($url,18,strpos($url,".php"));
+                    $url = substr($url,0,strpos($url,".php"));
+                    
+                    if ($url == "Home")
+                    {
+                        echo '<span class="Home"><i class="fa fa-home"></i>';
+                    }elseif ($url == "Students")
+                    {
+                        echo '<span class="Home"><i class="fa fa-address-card"></i>';
+                    }elseif ($url == "Courses")
+                    {
+                        echo '<span class="Home"><i class="fa fa-graduation-cap"></i>';
+                    }
+                    echo $url;
+                ?>
+                </span>
                 <div class="Search">
                     <i class="fa fa-search"></i>
                     <input type="search" placeholder="Search">
@@ -66,8 +83,8 @@
                         echo '<tr>';
                             if ($user == "Admin"){
                                 echo '<td class = "admin-panel">';
-                                echo '<button class = "button btn-info" type="button">EDIT</button>';
-                                echo '<button class = "button btn-danger" type="button">DELETE</button>';
+                                echo '<button class = "button btn-info" type="button"><span>EDIT</span></button>';
+                                echo '<button class = "button btn-danger" type="button"><span>DELETE</span></button>';
                                 echo '</td>';
                             }
                             echo "<td class = 'small'>" . ++$current_row . "</td> <td class = 'name'> $name</td> <td class = 'email'> $email</td> <td class = 'small'> $gpa</td>";
