@@ -142,7 +142,7 @@ function deleteStudent(id) {
                     <tr>
                         <?php
                             if ($user == "Admin")
-                            echo  '<a class="btn-success" href="Create.php">
+                            echo  '<a class="btn-success" href="CreateStudents.php">
                                 Create new
                                 </a>
                             ';

@@ -87,7 +87,7 @@
 
                     <?php
                         if ($user == "Admin"){
-                            echo  '<a class="btn-success" href="Create.php">
+                            echo  '<a class="btn-success" href="CreateCourses.php">
                                 Create new
                                 </a>
                             ';
