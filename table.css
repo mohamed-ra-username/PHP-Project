@@ -73,16 +73,13 @@
 .btn-info {
     margin-right: 10px;
     background-color: #17a2b8;
-    color: #fff;
 }
 
 .btn-danger {
     background-color: #dc3545;
-    color: #fff;
 }
 
 .btn-success {
-    bottom: 195px;
+    padding: 15px;
     background-color: #28a745;
-    color: #fff;
 }
