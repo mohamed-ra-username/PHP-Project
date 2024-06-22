@@ -1,0 +1,35 @@
+
+.pop-up {
+    position: fixed;
+    z-index: 10;
+    width: 99%;
+    display: flex;
+    top: 20px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.pop-up form {
+    backdrop-filter: blur(5px);
+    background-color: rgba(211, 211, 211, 0.219);
+    display: flex;
+    padding: 20px;
+    border: 2px solid lightgrey;
+    flex-direction: column;
+    border-radius: 15px;
+}
+
+.pop-up > form > section {
+    
+    display:flex !important;
+    justify-content: space-between !important;
+    flex: 1;
+}
+
+.pop-up form > section > input{
+    margin-left: 10px;
+}
+.pop-up > form > section > .text,input {
+    font-family: sans-serif;
+    font-weight: bolder;
+}

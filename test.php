@@ -5,7 +5,7 @@ echo var_dump($_POST)
 
 ?> 
 
-<link rel="stylesheet" href="table.css">
+<link rel="stylesheet" href="popup.css">
 
 <div class="pop-up">
     <form action="test.php" method="post" class ="content-box">
@@ -63,9 +63,9 @@ echo var_dump($_POST)
 
 </div>
 <?php
-    create($_POST);
-    for ($i=0; $i <50 ; $i++) { 
-        echo$i;
-        echo'<br>';
-    }
+    // create($_POST);
+    // for ($i=0; $i <50 ; $i++) { 
+    //     echo$i;
+    //     echo'<br>';
+    // }
 ?>
