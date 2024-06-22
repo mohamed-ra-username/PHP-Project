@@ -8,6 +8,32 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Dashboard</title>
 </head>
+
+<script>
+function deleteCourse(id) {
+    if (confirm('Are you sure you want to delete this course?')) {
+        fetch('delete_courses.php?id=' + id, {
+            method: 'DELETE'
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                var row = document.getElementById('row_' + id);
+                if (row) {
+                    row.parentNode.removeChild(row);
+                }
+            } else {
+                alert('Error deleting course: ' + data.message);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('An error occurred while deleting the course.');
+        });
+    }
+}
+</script>
+
 <body>
     <div class="container">
         <nav class="nav">
@@ -63,27 +89,29 @@
                     </thead>
 
                     <tbody>
-                        <?php
-                            foreach($all_courses as $item){
-                                $title = $item["title"];
-                                $description = $item["description"];
-                                $instructor = $item["instructor"];
-                                
-                                echo '<tr>';
-                                    if ($user == "Admin"){
-                                        echo '<td class="admin-panel">';
-                                        echo '<button class="button btn-info" type="button">EDIT</button>';
-                                        echo '<button class="button btn-danger" type="button">DELETE</button>';
-                                        echo '</td>';
-                                    }
-                                    echo "<td class='small'>" . $item['id'] . "</td>";
-                                    echo "<td class='title'> $title</td>";
-                                    echo "<td class='description'> $description</td>";
-                                    echo "<td class='instructor'> $instructor</td>";
-                                echo '</tr>';
-                            } 
-                        ?>
-                    </tbody>
+    <?php
+    foreach ($all_courses as $item) {
+        $id = $item["id"];
+        $title = $item["title"];
+        $description = $item["description"];
+        $instructor = $item["instructor"];
+        
+        echo '<tr id="row_' . $id . '">';
+        if ($user == "Admin") {
+            echo '<td class="admin-panel">';
+            echo '<button class="button btn-info" type="button">EDIT</button>';
+            echo '<button class="button btn-danger" onclick="deleteCourse(' . $id . ')" type="button">DELETE</button>';
+            echo '</td>';
+        }
+        echo "<td class='small'>" . $id . "</td>";
+        echo "<td class='title'>" . $title . "</td>";
+        echo "<td class='description'>" . $description . "</td>";
+        echo "<td class='instructor'>" . $instructor . "</td>";
+        echo '</tr>';
+    } 
+    ?>
+</tbody>
+
 
                     <?php
                         if ($user == "Admin"){
