@@ -38,7 +38,7 @@
         include "database.php";
 
         $get = $_GET;
-        if ($get["name"])
+        if (isset($get["name"]))
         {
             $name = $get["name"];
             $gpa = $get["gpa"];
