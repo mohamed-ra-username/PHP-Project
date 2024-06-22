@@ -1,68 +1,39 @@
-<link rel="stylesheet" href="popup.css">
-<?php
-//  include "database.php";
-// echo var_dump($_POST)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Entries</title>
+</head>
+<body>
+    <h1>Add Student</h1>
+    <form id="create-student-form">
+        <label for="student-name">Name:</label>
+        <input type="text" id="student-name" name="name" required>
+        <br>
+        <label for="gpa">GPA:</label>
+        <input type="number" step="0.01" id="gpa" name="gpa" required>
+        <br>
+        <label for="enrolled">Enrolled:</label>
+        <input type="text" id="enrolled" name="enrolled" required>
+        <br>
+        <button type="submit">Add Student</button>
+    </form>
 
+    <h1>Add Course</h1>
+    <form id="create-course-form">
+        <label for="subject">Subject:</label>
+        <input type="text" id="subject" name="subject" required>
+        <br>
+        <label for="description">Description:</label>
+        <input type="text" id="description" name="description" required>
+        <br>
+        <label for="instructor">Instructor:</label>
+        <input type="text" id="instructor" name="instructor" required>
+        <br>
+        <button type="submit">Add Course</button>
+    </form>
 
-
-
-function create_popup($action_loc,$user_action,$id)
-{
-    echo '
-        <div class="pop-up" id ="myPopup">
-            <form action="'. $action_loc . '" method="post" class ="content-box">
-                <input type="hidden" name="id" value='. $id. '>
-                <input type="hidden" name="action" value="' . $user_action . '">
-                <h3 class = "text" for="form">' . $user_action . ' user id:'. $id.'</h3>
-                <br>
-                
-                <section class="content">
-                    <label class="text" for="Name" >Name:</label>
-                    
-                    <input
-                    required
-                    name="Name" 
-                    type="text" 
-                    id="Name" 
-                    autocomplete="given-name"
-                    placeholder="John Doe"
-                    >
-                    </section>
-                    
-                    <section class="content">
-                    <label class="text" for="Email">Email :</label>
-                    
-                    <input
-                    name="Email"
-                    type="email"
-                    id="Email"
-                    autocomplete="on"
-                    placeholder= "Example@mail.com"
-                    >
-                    </section>
-                
-                <section class = "content">
-                    <label class="text" for="GPA">GPA :</label>
-
-                    <input
-                    required
-                    name="GPA"
-                    type="number"
-                    id ="GPA"
-                    step=".1"
-                    min="0"
-                    max="4"
-                    placeholder="0-4"
-                    />
-                    </section>
-
-                    
-                    <span style = "align-self: center;">
-                    <button  type="submit">Submit</button>
-                    </span>
-                    
-                </form>
-            
-            </div>';
-    }
-?> 
+    <script src="script.js"></script>
+</body>
+</html>

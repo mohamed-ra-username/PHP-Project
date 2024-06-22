@@ -19,13 +19,6 @@
 
         ?>
 
-<script>
-        function myFunction() {
-        var popup = document.getElementById("myPopup");
-        popup.classList.toggle("show");
-}
-</script>
-
 <div class="container">
         <nav class="nav">
             <span>Dashboard</span>
@@ -65,7 +58,6 @@
             <thead>
                 <tr>
                     <?php 
-                    include "test.php";
                     if ($user == "Admin") echo '<th class = "admin-head">' . 'Admin Panel' . '</th>';?>
 
                     <th>ID</th>
@@ -92,7 +84,6 @@
                             if ($user == "Admin"){
                                 echo '<td class = "admin-panel">';
                                 echo '<button onclick="myFunction" class = "button btn-info" type="button"><span>EDIT</span></button>';
-                                create_popup("students.php","EDIT",$id);
                                 echo '<button class = "button btn-danger" type="button"><span>DELETE</span></button>';
                                 echo '</td>';
                             }
