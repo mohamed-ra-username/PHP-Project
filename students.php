@@ -1,5 +1,7 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 
     <head>
         <link rel="stylesheet" href="table.css">
@@ -18,14 +20,28 @@ function editStudent(id) {
 </script>
 
 
+
 <script>
 function deleteStudent(id) {
-
     if (confirm('Are you sure you want to delete this student?')) {
-        var row = document.getElementById('row_' + id);
-        if (row) {
-            row.parentNode.removeChild(row);
-        }
+        fetch('delete_student.php?id=' + id, {
+            method: 'DELETE'
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                var row = document.getElementById('row_' + id);
+                if (row) {
+                    row.parentNode.removeChild(row);
+                }
+            } else {
+                alert('Error deleting student: ' + data.message);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('An error occurred while deleting the student.');
+        });
     }
 }
 </script>
