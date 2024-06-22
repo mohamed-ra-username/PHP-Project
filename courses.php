@@ -86,15 +86,10 @@
 
                     <?php
                         if ($user == "Admin"){
-                            echo '<tfoot>';
-                                echo '<tr>';
-                                    echo '<tr>';
-                                        echo  '<button class="button btn-success" type="button">';
-                                            echo 'Create new';
-                                        echo '</button>';
-                                    echo '</tr>';
-                                echo '</tr>';
-                            echo '</tfoot>';
+                            echo  '<a class="btn-success" href="Create.php">
+                                Create new
+                                </a>
+                            ';
                         }
                     ?>
                 </table>

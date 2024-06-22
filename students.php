@@ -121,10 +121,10 @@
                     <tr>
                         <?php
                             if ($user == "Admin")
-                            echo  '<button class = "button btn-success" type="button">
-                            Create new
-                            </button>';
-                            echo var_dump($_POST);
+                            echo  '<a class="btn-success" href="Create.php">
+                                Create new
+                                </a>
+                            ';
                         ?>
                     </tr>
                 </tr>

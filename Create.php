@@ -6,6 +6,7 @@
     <title>Create Entries</title>
 </head>
 <body>
+    <div>
     <h1>Add Student</h1>
     <form id="create-student-form">
         <label for="student-name">Name:</label>
@@ -19,7 +20,9 @@
         <br>
         <button type="submit">Add Student</button>
     </form>
+</div>
 
+    <div>
     <h1>Add Course</h1>
     <form id="create-course-form">
         <label for="subject">Subject:</label>
@@ -33,6 +36,7 @@
         <br>
         <button type="submit">Add Course</button>
     </form>
+</div>
 
     <?php
         include "database.php";
@@ -42,7 +46,7 @@
         {
             $name = $get["name"];
             $gpa = $get["gpa"];
-            $email = $get["email"] || NULL;
+            $email = $get["email"];
     
             $sql ='INSERT INTO students'.  "(`id`, `name`, `gpa`, `email`, `owned_courses`)".  'VALUES' . "(NULL, '$name', '$gpa', '$email', NULL)";
             $test = mysqli_query($conn, $sql);
@@ -51,7 +55,7 @@
         {
             $subject = $get["subject"];
             $description = $get["description"];
-            $instructor = $get["instructor"] || NULL;
+            $instructor = $get["instructor"];
     
             $sql ='INSERT INTO students'.  "(`id`, `name`, `gpa`, `email`, `owned_courses`)".  'VALUES' . "(NULL, '$subject', '$description', '$instructor', NULL)";
             $test = mysqli_query($conn, $sql);

@@ -42,11 +42,6 @@
     transform: scale(1.1);
     box-shadow: 3px 3px 0px 0px rgb(0, 0, 0);
 }
-.btn-success:hover {
-    translate: -1px -1px;
-    transform: scale(.9);
-    box-shadow: 3px 3px 0px 0px rgb(0, 0, 0);
-}
 .button:active{
     transition: .1s ease-out;
     translate: 0px 2px;
@@ -63,6 +58,17 @@
 }
 
 .btn-success {
+    display: flex;
+    color: #019654;
+    border: 1px solid lightgray;
     padding: 15px;
-    background-color: #28a745;
+    border-radius: 15px 15px 0px 0px ;
+    text-decoration: none;
+    justify-content: center;
+
 }
+.btn-success:hover {
+    transition: 2s;
+    background-color: #B9FFE1;
+}
+
