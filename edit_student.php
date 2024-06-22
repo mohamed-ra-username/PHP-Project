@@ -89,7 +89,7 @@
             $email = $_POST["email"];
 
             
-            $sql = "UPDATE `students` SET `name` = '$name', `gpa` = '$gpa', `email` = '$email' WHERE `students`.`id` = 104";
+            $sql = "UPDATE `students` SET `name` = '$name', `gpa` = '$gpa', `email` = '$email' WHERE `students`.`id` = $id";
 
             $test = mysqli_query($conn, $sql);
 

@@ -54,40 +54,41 @@
                 if (isset($_GET["id"]))
                 {
                     $id = $_GET["id"];
-                    $found = mysqli_query($conn,"SELECT * FROM students where id=$id;");
+                    $found = mysqli_query($conn,"SELECT * FROM courses where id=$id;");
                 }
                 $data = mysqli_fetch_assoc($found);
-                $old_name = $data["name"];
-                $old_email = $data["email"];
-                $old_gpa = $data["gpa"];
+                $old_description = $data["description"];
+                $old_subject = $data["title"];
+                $old_instructor = $data["instructor"];
                 echo "
                 <div>
-                    <h1>Edit Student</h1>
-                    <form class='create-student-form' method='post'>
-                        <label for='student-name'>Name:</label>
-                        <input class='forminput' type='text' id='student-name' name='name' value ='$old_name' required>
+                    <h1>Edit Course</h1>
+                    <form class='create-course-form' method='post'>
+                        <label for='subject'>Subject:</label>
+                        <input class='forminput' type='text' id='subject' name='subject' value='$old_subject' required>
                         <br>
-                        <label for='gpa'>GPA:</label>
-                        <input class='forminput' type='number' step='0.01' id='gpa' name='gpa' value = '$old_gpa' required>
+                        <label for='description'>Description:</label>
+                        <input class='forminput' type='text' id='description' name='description' value='$old_description' required>
                         <br>
-                        <label for='email'>email:</label>
-                        <input class='forminput' type='email' id='email' name='email' value = '$old_email' required>
+                        <label for='instructor'>Instructor:</label>
+                        <input class='forminput' type='text' id='instructor' name='instructor' value='$old_instructor' required>
                         <br>
-                        <button type='submit'>Edit Student</button>
+                        <button type='submit'>Edit Course</button>
                     </form>
+
                 </div>"
                 ?>
     </div>
 </div>
     <?php
         
-        if (isset($get["subject"]))
+        if (isset($_POST["subject"]))
         {
-            $subject = $get["subject"];
-            $description = $get["description"];
-            $instructor = $get["instructor"];
+            $subject = $_POST["subject"];
+            $description = $_POST["description"];
+            $instructor = $_POST["instructor"];
     
-            $sql = "UPDATE `students` SET `name` = `$name`, `gpa` = `$gpa`, `email` = `$email` WHERE `students`.`id` = $id";
+            $sql = "UPDATE `courses` SET `id` = '$id', `description` = '$description', `title` = '$subject', `instructor` = '$instructor' WHERE `courses`.`id` = $id";
             $test = mysqli_query($conn, $sql);
         }
     ?>

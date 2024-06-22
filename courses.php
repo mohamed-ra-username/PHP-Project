@@ -11,7 +11,7 @@
 
 <script>
         
-    function editCourse(id) {
+    function editCourses(id) {
         window.location.href = 'edit_courses.php?id=' + id;
     }
 </script>
@@ -28,6 +28,8 @@ function deleteCourse(id) {
                 if (row) {
                     row.parentNode.removeChild(row);
                 }
+                window.location.href = 'Courses.php';
+
             } else {
                 alert('Error deleting course: ' + data.message);
             }
@@ -105,8 +107,8 @@ function deleteCourse(id) {
         echo '<tr id="row_' . $id . '">';
         if ($user == "Admin") {
             echo '<td class="admin-panel">';
-            echo '<button class="button btn-info" type="button">EDIT</button>';
-            echo '<button class="button btn-danger" onclick="deleteCourses(' . $id . ')" type="button">DELETE</button>';
+            echo '<button class="button btn-info" onclick="editCourses(' . $id .')" type="button">EDIT</button>';
+            echo '<button class="button btn-danger" onclick="deleteCourse(' . $id . ')" type="button">DELETE</button>';
             echo '</td>';
         }
         echo "<td class='small'>" . $id . "</td>";
