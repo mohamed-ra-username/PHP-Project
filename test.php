@@ -18,27 +18,29 @@ echo var_dump($_POST)
 
 <div class="pop-up">
     <form action="test.php" method="post" class ="content-box">
-        <input type="hidden" name="id" value="idk">
-        <label for="title">Edit User</label>
+        <input type="hidden" name="id" value="$var">
+        <input type="hidden" name="action" value="$action">
+        <h3 class = "text" for="form">$action User</h3>
         <br>
 
         <section class="content">
-            <label for="name" >name:</label>
+            <label class="text" for="Name" >Name:</label>
             <input
             required
-            name="name" 
+            name="Name" 
             type="text" 
-            id="std_name" 
+            id="Name" 
+            autocomplete="given-name"
             placeholder="Amr Nader"
             >
         </section>
         <section class="content">
             
-            <label for="email">email:</label>
+            <label class="text" for="Email">Email:</label>
             <input
-            name="email"
+            name="Email"
             type="email"
-            id="std_email"
+            id="Email"
             autocomplete="on"
             placeholder= "Example@mail.com"
             >
@@ -46,13 +48,13 @@ echo var_dump($_POST)
         
         <section class = "content">
 
-            <label for="gpa">gpa:</label>
+            <label class="text" for="GPA">GPA:</label>
 
             <input
             required
-            name="gpa"
+            name="GPA"
             type="number"
-            id ="std_gpa"
+            id ="GPA"
             step=".1"
             min='0'
             max='4'
@@ -68,16 +70,10 @@ echo var_dump($_POST)
     </form>
 
 </div>
-<form action="test.php" method="post">
-
-    <input type="hidden" name="id" value="69" />
-    
-
-    <br><br>
-
-
-    <input type="submit" name ="user-submit" value="Submit">
-</form> 
 <?php
     create($_POST);
+    for ($i=0; $i <50 ; $i++) { 
+        echo$i;
+        echo'<br>';
+    }
 ?>

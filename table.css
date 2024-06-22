@@ -2,7 +2,8 @@
     margin-bottom: 50px;
 }
 .pop-up {
-    position: absolute;
+    position: fixed;
+    z-index: 10;
     width: 99%;
     display: flex;
     top: 20px;
@@ -27,7 +28,7 @@
     flex: 1;
 }
 
-.pop-up form label{
+.pop-up form .text{
     font-family: sans-serif;
     font-weight: bolder;
 }
