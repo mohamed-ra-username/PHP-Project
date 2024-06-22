@@ -8,6 +8,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Dashboard</title>
 </head>
+
+<script>
+function editStudent(id) {
+    window.location.href = 'edit_student.php?id=' + id;
+}
+</script>
 <body>
     <div class="container">
         <nav class="nav">
