@@ -19,6 +19,13 @@
 
         ?>
 
+<script>
+        function myFunction() {
+        var popup = document.getElementById("myPopup");
+        popup.classList.toggle("show");
+}
+</script>
+
 <div class="container">
         <nav class="nav">
             <span>Dashboard</span>
@@ -28,7 +35,6 @@
                 <a href="Students.php" class="sideitem"> <i class="fa fa-address-card"></i>Students</a>
             </div>
         </nav>
-
         <div class="content">
             <header class="Header">
                 <?php
@@ -58,7 +64,9 @@
         <table class = "data">
             <thead>
                 <tr>
-                    <?php if ($user == "Admin") echo '<th class = "admin-head">' . 'Admin Panel' . '</th>';?>
+                    <?php 
+                    include "test.php";
+                    if ($user == "Admin") echo '<th class = "admin-head">' . 'Admin Panel' . '</th>';?>
 
                     <th>ID</th>
                     <th>NAME</th>
@@ -83,7 +91,8 @@
                         echo '<tr>';
                             if ($user == "Admin"){
                                 echo '<td class = "admin-panel">';
-                                echo '<button class = "button btn-info" type="button"><span>EDIT</span></button>';
+                                echo '<button onclick="myFunction" class = "button btn-info" type="button"><span>EDIT</span></button>';
+                                create_popup("students.php","EDIT",$id);
                                 echo '<button class = "button btn-danger" type="button"><span>DELETE</span></button>';
                                 echo '</td>';
                             }
@@ -124,6 +133,7 @@
                             echo  '<button class = "button btn-success" type="button">
                             Create new
                             </button>';
+                            echo var_dump($_POST);
                         ?>
                     </tr>
                 </tr>
