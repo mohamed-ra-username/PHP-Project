@@ -62,7 +62,7 @@
                 $old_gpa = $data["gpa"];
                 echo "
                 <div>
-                    <h1>Edit Course</h1>
+                    <h1>Edit Student</h1>
                     <form class='create-student-form' method='post'>
                         <label for='student-name'>Name:</label>
                         <input class='forminput' type='text' id='student-name' name='name' value ='$old_name' required>
@@ -83,11 +83,13 @@
         
         if (isset($_POST["name"]))
         {
+            $id = $_GET["id"];
             $name = $_POST["name"];
             $gpa = $_POST["gpa"];
             $email = $_POST["email"];
 
-            $sql = "UPDATE `students` SET `id`='$id',`name`='$name',`gpa`='$gpa',`email`='$email'WHERE $id";
+            
+            $sql = "UPDATE `students` SET `name` = `$name`, `gpa` = `$gpa`, `email` = `$email` WHERE `students`.`id` = $id";
 
             $test = mysqli_query($conn, $sql);
 

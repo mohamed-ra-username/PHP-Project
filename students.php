@@ -14,8 +14,9 @@
     </head>
 
     <script>
+
 function editStudent(id) {
-    window.location.href = 'edit_course.php?id=' + id;
+    window.location.href = 'edit_student.php?id=' + id;
 }
 </script>
 
