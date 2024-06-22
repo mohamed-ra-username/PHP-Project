@@ -10,6 +10,12 @@
 </head>
 
 <script>
+        
+    function editCourse(id) {
+        window.location.href = 'edit_courses.php?id=' + id;
+    }
+</script>
+<script>
 function deleteCourse(id) {
     if (confirm('Are you sure you want to delete this course?')) {
         fetch('delete_courses.php?id=' + id, {
@@ -100,7 +106,7 @@ function deleteCourse(id) {
         if ($user == "Admin") {
             echo '<td class="admin-panel">';
             echo '<button class="button btn-info" type="button">EDIT</button>';
-            echo '<button class="button btn-danger" onclick="deleteCourse(' . $id . ')" type="button">DELETE</button>';
+            echo '<button class="button btn-danger" onclick="deleteCourses(' . $id . ')" type="button">DELETE</button>';
             echo '</td>';
         }
         echo "<td class='small'>" . $id . "</td>";

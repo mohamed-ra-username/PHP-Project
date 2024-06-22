@@ -13,11 +13,11 @@
         <title>Document</title>
     </head>
 
-    <script>
+<script>
         
-        function editStudent(id) {
-            window.location.href = 'edit_student.php?id=' + id;
-        }
+    function editStudent(id) {
+        window.location.href = 'edit_student.php?id=' + id;
+    }
 </script>
 <script>
     function deleteStudent(id) {
