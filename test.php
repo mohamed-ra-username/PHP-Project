@@ -63,9 +63,9 @@ echo var_dump($_POST)
 
 </div>
 <?php
-    create($_POST);
-    for ($i=0; $i <50 ; $i++) { 
-        echo$i;
-        echo'<br>';
-    }
+    // create($_POST);
+    // for ($i=0; $i <50 ; $i++) { 
+    //     echo$i;
+    //     echo'<br>';
+    // }
 ?>
