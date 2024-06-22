@@ -14,8 +14,8 @@
         <label for="gpa">GPA:</label>
         <input type="number" step="0.01" id="gpa" name="gpa" required>
         <br>
-        <label for="enrolled">Enrolled:</label>
-        <input type="text" id="enrolled" name="enrolled" required>
+        <label for="email">email:</label>
+        <input type="email" id="email" name="email" required>
         <br>
         <button type="submit">Add Student</button>
     </form>
@@ -34,6 +34,19 @@
         <button type="submit">Add Course</button>
     </form>
 
-    <script src="script.js"></script>
+    <?php
+        include "database.php";
+
+        $get = $_GET;
+        if ($get["name"])
+        {
+            $name = $get["name"];
+            $gpa = $get["gpa"];
+            $email = $get["email"] || NULL;
+    
+            $sql ='INSERT INTO students'.  "(`id`, `name`, `gpa`, `email`, `owned_courses`)".  'VALUES' . "(NULL, '$name', '$gpa', '$email', NULL)";
+            $test = mysqli_query($conn, $sql);
+        }
+    ?>
 </body>
 </html>
