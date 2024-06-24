@@ -47,25 +47,18 @@
             </header>
             <div class="cont">
 
-            <?php
-                
-            ?>
             <div>
-            <h1>Add Student</h1>
-            <form class="create-student-form">
-                <label for="student-name">Name:</label>
-                <input class="forminput" type="text" id="student-name" name="name" required>
+            <h1>Add Students</h1>
+            <form class="create-course-form" method="post">
+                <label for="title">Subject:</label>
+                <input class="forminput" type="text" id="name" name="name" required>
                 <br>
-                <label for="gpa">GPA:</label>
-                <input class="forminput" type="number" step="0.01" id="gpa" min="0" max="4" name="gpa" required>
+                <label for="description">Description:</label>
+                <input class="forminput" type="text" id="gpa" name="gpa" required>
                 <br>
-                <label for="email">email:</label>
+                <label for="instructor">Instructor:</label>
                 <input class="forminput" type="email" id="email" name="email" required>
                 <br>
-                <?php
-                include "database.php";
-
-                ?>
                 <button type="submit">Add Student</button>
             </form>
         </div>
@@ -75,23 +68,15 @@
     <?php
         include "database.php";
         
-        $get = $_GET;
-        if (isset($get["name"]))
+        $post = $_POST;
+
+        if (isset($post["name"]))
         {
-            $name = $get["name"];
-            $gpa = $get["gpa"];
-            $email = $get["email"];
+            $name = $post["name"];
+            $gpa = $post["gpa"];
+            $email = $post["email"];
     
-            $sql ='INSERT INTO students'.  "(`id`, `name`, `gpa`, `email`, `owned_courses`)".  'VALUES' . "(NULL, '$name', '$gpa', '$email', NULL)";
-            $test = mysqli_query($conn, $sql);
-        }
-        if (isset($get["subject"]))
-        {
-            $subject = $get["subject"];
-            $description = $get["description"];
-            $instructor = $get["instructor"];
-    
-            $sql ='INSERT INTO students'.  "(`id`, `name`, `gpa`, `email`, `owned_courses`)".  'VALUES' . "(NULL, '$subject', '$description', '$instructor', NULL)";
+            $sql ="INSERT INTO `students` (`id`, `name`, `gpa`, `email`, `owned_courses`) VALUES (NULL, '$name', '$gpa', '$email', NULL)";
             $test = mysqli_query($conn, $sql);
         }
     ?>

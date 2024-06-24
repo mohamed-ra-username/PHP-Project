@@ -49,8 +49,8 @@
 
             <div>
             <h1>Add Course</h1>
-            <form class="create-course-form">
-                <label for="subject">Subject:</label>
+            <form class="create-course-form" method="post">
+                <label for="title">Subject:</label>
                 <input class="forminput" type="text" id="subject" name="subject" required>
                 <br>
                 <label for="description">Description:</label>
@@ -68,23 +68,15 @@
     <?php
         include "database.php";
         
-        $get = $_GET;
-        if (isset($get["name"]))
+        $post = $_POST;
+
+        if (isset($post["subject"]))
         {
-            $name = $get["name"];
-            $gpa = $get["gpa"];
-            $email = $get["email"];
+            $title = $post["subject"];
+            $description = $post["description"];
+            $instructor = $post["instructor"];
     
-            $sql ='INSERT INTO students'.  "(`id`, `name`, `gpa`, `email`, `owned_courses`)".  'VALUES' . "(NULL, '$name', '$gpa', '$email', NULL)";
-            $test = mysqli_query($conn, $sql);
-        }
-        if (isset($get["subject"]))
-        {
-            $subject = $get["subject"];
-            $description = $get["description"];
-            $instructor = $get["instructor"];
-    
-            $sql ='INSERT INTO courses'.  "(`id`, `title`, `description`, `instructor`, `owned_courses`)".  'VALUES' . "(NULL, '$subject', '$description', '$instructor', NULL)";
+            $sql ="INSERT INTO `courses` (`id`, `description`, `title`, `instructor`, `owned_courses`) VALUES (NULL, '$description', '$title', '$instructor', NULL)";
             $test = mysqli_query($conn, $sql);
         }
     ?>
