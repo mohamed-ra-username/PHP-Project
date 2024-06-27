@@ -131,14 +131,13 @@
                                     Echo "None";
                                 else
                                 {
-                                    $owned_courses = str_split($owned_courses);
+                                    $owned_courses = explode(",",$owned_courses);
                                     $i =0;
                                     foreach ($owned_courses as $idx) {
-                                        $id = intval($idx);
-                                        $courses = mysqli_query($conn, "SELECT title FROM courses where id=$id;");
+                                        $courses = mysqli_query($conn, "SELECT title FROM courses where id=$idx;");
                                         $course = mysqli_fetch_assoc($courses);
                                         
-                                        echo $course ? $course["title"] : "<err> Course Not Found </err>";
+                                        echo $course ? ucfirst($course["title"]) : "<err> Course Not Found </err>";
                                         
                                         if (++$i < count($owned_courses))
                                         echo ", ";
@@ -169,4 +168,6 @@
                 </div>
                 </div>
     </body>
+    
+  
 </html>

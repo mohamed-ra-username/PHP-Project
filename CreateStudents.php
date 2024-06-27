@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="home.css">
@@ -8,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Entries</title>
 </head>
+
 <body>
     <div class="container">
         <nav class="nav">
@@ -22,22 +24,23 @@
         <div class="content">
             <header class="Header">
                 <?php
-                    $url = $_SERVER['REQUEST_URI'];
-                    $url = substr($url,18,strpos($url,".php"));
-                    $url = substr($url,0,strpos($url,".php"));
-                    $url = ucfirst($url);
-                    
-                    if ($url == "Home")
-                    {
-                        echo '<span class="Home"><i class="fa fa-home"></i>';
-                    }if ($url == "Students")
-                    {
-                        echo '<span class="Home"><i class="fa fa-address-card"></i>';
-                    }if ($url == "Courses")
-                    {
-                        echo '<span class="Home"><i class="fa fa-graduation-cap"></i>';
-                    }
-                    echo $url;
+                include "database.php";
+
+                $url = $_SERVER['REQUEST_URI'];
+                $url = substr($url, 18, strpos($url, ".php"));
+                $url = substr($url, 0, strpos($url, ".php"));
+                $url = ucfirst($url);
+
+                if ($url == "Home") {
+                    echo '<span class="Home"><i class="fa fa-home"></i>';
+                }
+                if ($url == "Students") {
+                    echo '<span class="Home"><i class="fa fa-address-card"></i>';
+                }
+                if ($url == "Courses") {
+                    echo '<span class="Home"><i class="fa fa-graduation-cap"></i>';
+                }
+                echo $url;
                 ?>
                 </span>
                 <div class="Search">
@@ -47,38 +50,61 @@
             </header>
             <div class="cont">
 
-            <div>
-            <h1>Add Students</h1>
-            <form class="create-course-form" method="post">
-                <label for="title">Subject:</label>
-                <input class="forminput" type="text" id="name" name="name" required>
-                <br>
-                <label for="description">Description:</label>
-                <input class="forminput" type="text" id="gpa" name="gpa" required>
-                <br>
-                <label for="instructor">Instructor:</label>
-                <input class="forminput" type="email" id="email" name="email" required>
-                <br>
-                <button type="submit">Add Student</button>
-            </form>
+                <div>
+                    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@3.0.1/dist/css/multi-select-tag.css">
+                    <script src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@3.0.1/dist/js/multi-select-tag.js"></script>
+                    <h1>Add Students</h1>
+                    <form class="create-course-form" method="post">
+                        <label for="title">Name:</label>
+                        <input class="forminput" type="text" id="name" name="name" required>
+                        <br>
+                        <label for="description">GPA:</label>
+                        <input class="forminput" type="number" inputmode="numeric" step=".1" id="gpa" name="gpa" max='4' min='0' required>
+                        <br>
+                        <label for="instructor">Email:</label>
+                        <input class="forminput" type="email" id="email" name="email" required>
+                        <br>
+                        <label for="instructor">Course:</label>
+                        <select name='courses[]' id='courses' multiple>
+                            <?php
+
+                            foreach ($all_courses as $course) {
+                                $id = $course["id"];
+                                $title = ucfirst($course["title"]);
+
+                                echo "<option value = '$id'>";
+                                echo $title;
+                                echo "</option>";
+                            }
+
+                            ?>
+                        </select>
+                        <br>
+                        <button type="submit" name="new" id="new">Add</button>
+                    </form>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
+        <?php
+        if (isset($_POST["new"])) {
 
-    <?php
-        include "database.php";
-        
-        $post = $_POST;
+            $post = $_POST;
 
-        if (isset($post["name"]))
-        {
+
             $name = $post["name"];
             $gpa = $post["gpa"];
             $email = $post["email"];
-    
-            $sql ="INSERT INTO `students` (`id`, `name`, `gpa`, `email`, `owned_courses`) VALUES (NULL, '$name', '$gpa', '$email', NULL)";
+            $new_courses = isset($post["courses"]) ? join(",", $post["courses"]) : null;
+
+
+
+            $sql = "INSERT INTO `students` (`id`, `name`, `gpa`, `email`, `owned_courses`) VALUES (NULL, '$name', '$gpa', '$email', '$new_courses')";
             $test = mysqli_query($conn, $sql);
         }
-    ?>
+        ?>
+        <script>
+            new MultiSelectTag('courses') // id
+        </script>
 </body>
+
 </html>
