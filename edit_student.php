@@ -1,9 +1,16 @@
+
 <?php
     include "database.php";
-?>
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@3.0.1/dist/css/multi-select-tag.css">
+                        <script src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@3.0.1/dist/js/multi-select-tag.js"></script>
+                        
+            <script>
+                new MultiSelectTag('courses') // id
+            </script>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="create.css">
@@ -48,35 +55,56 @@
                     <input type="search" placeholder="Search">
                 </div>
             </header>
+            
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@3.0.1/dist/css/multi-select-tag.css">
+            <script src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@3.0.1/dist/js/multi-select-tag.js"></script>
             <div class="cont">
+            <div>
+                <h1>Edit Student</h1>
+                <form class='create-student-form' autocomplete="on" method='post'>
 
             <?php
-                if (isset($_GET["id"]))
-                {
-                    $id = $_GET["id"];
-                    $found = mysqli_query($conn,"SELECT * FROM students where id=$id;");
-                }
+                $id = (isset($_GET["id"])) ? $_GET["id"] : 0;
+                
+                $found = mysqli_query($conn,"SELECT * FROM students where id=$id;");
                 $data = mysqli_fetch_assoc($found);
                 $old_name = $data["name"];
                 $old_email = $data["email"];
                 $old_gpa = $data["gpa"];
-                echo "
-                <div>
-                    <h1>Edit Student</h1>
-                    <form class='create-student-form' method='post'>
+                $old_courses = $data["owned_courses"];
+                        ?>
+                        
                         <label for='student-name'>Name:</label>
-                        <input class='forminput' type='text' id='student-name' name='name' value ='$old_name' required>
+                        <input class='forminput' type='text' id='student-name' name='name' value ='<?php echo $old_name?>' required>
                         <br>
                         <label for='gpa'>GPA:</label>
-                        <input class='forminput' type='number' step='0.01' id='gpa' name='gpa' value = '$old_gpa' required>
+                        <input class='forminput' type='number' step='0.01' id='gpa' name='gpa' value = '<?php echo $old_gpa?>' required>
                         <br>
                         <label for='email'>email:</label>
-                        <input class='forminput' type='email' id='email' name='email' value = '$old_email' required>
+                        <input class='forminput' type='email' id='email' name='email' value = '<?php echo $old_email?>' required>
+
                         <br>
+                        
+                        <label for="courses">Course:</label>
+                        <select name='courses[]' id='courses' multiple>
+                            <?php
+
+                            foreach ($all_courses as $course) {
+                                $id = $course["id"];
+                                $title = ucfirst($course["title"]);
+                                echo "<option value = '$id'";
+                                echo str_contains($old_courses,$id)? "selected >" : " >";
+                                echo $title;
+                                echo "</option>";
+                            }
+
+                            ?>
+                        </select>
+                        <br>
+
                         <button type='submit'>Edit Student</button>
                     </form>
-                </div>"
-                ?>
+                </div>
     </div>
 </div>
     <?php
@@ -87,13 +115,17 @@
             $name = $_POST["name"];
             $gpa = $_POST["gpa"];
             $email = $_POST["email"];
+            $new_courses = isset($_POST["courses"]) ? join(",",$_POST["courses"]) : null;
 
-            
-            $sql = "UPDATE `students` SET `name` = '$name', `gpa` = '$gpa', `email` = '$email' WHERE `students`.`id` = $id";
+            $sql = "UPDATE `students` SET `name` = '$name', `gpa` = '$gpa', `email` = '$email', `owned_courses` = '$new_courses' WHERE `students`.`id` = $id";
 
             $test = mysqli_query($conn, $sql);
 
         }
     ?>
 </body>
+
+<script>
+    new MultiSelectTag('courses')
+</script>
 </html>

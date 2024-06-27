@@ -60,24 +60,24 @@
                 $old_description = $data["description"];
                 $old_subject = $data["title"];
                 $old_instructor = $data["instructor"];
-                echo "
-                <div>
-                    <h1>Edit Course</h1>
-                    <form class='create-course-form' method='post'>
-                        <label for='subject'>Subject:</label>
-                        <input class='forminput' type='text' id='subject' name='subject' value='$old_subject' required>
-                        <br>
-                        <label for='description'>Description:</label>
-                        <input class='forminput' type='text' id='description' name='description' value='$old_description' required>
-                        <br>
-                        <label for='instructor'>Instructor:</label>
-                        <input class='forminput' type='text' id='instructor' name='instructor' value='$old_instructor' required>
-                        <br>
-                        <button type='submit'>Edit Course</button>
-                    </form>
-
-                </div>"
                 ?>
+                
+            <div>
+                <h1>Edit Course</h1>
+                <form class='create-course-form' autocomplete='on' method='post'>
+                    <label for='subject'>Subject:</label>
+                    <input class='forminput' type='text' id='subject' name='subject' value='<?php echo $old_subject?>' required>
+                    <br>
+                    <label for='description'>Description:</label>
+                    <input class='forminput' type='text' id='description' name='description' value='<?php echo $old_description?>' required>
+                    <br>
+                    <label for='instructor'>Instructor:</label>
+                    <input class='forminput' type='text' id='instructor' name='instructor' value='<?php echo $old_instructor?>' required>
+                    <br>
+                    <button type='submit'>Edit Course</button>
+                </form>
+
+            </div>
     </div>
 </div>
     <?php
@@ -88,7 +88,7 @@
             $description = $_POST["description"];
             $instructor = $_POST["instructor"];
     
-            $sql = "UPDATE `courses` SET `id` = '$id', `description` = '$description', `title` = '$subject', `instructor` = '$instructor' WHERE `courses`.`id` = $id";
+            $sql = "UPDATE `courses` SET `description` = '$description', `title` = '$subject', `instructor` = '$instructor' WHERE `courses`.`id` = $id";
             $test = mysqli_query($conn, $sql);
         }
     ?>

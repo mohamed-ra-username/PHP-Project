@@ -49,7 +49,7 @@
 
             <div>
             <h1>Add Course</h1>
-            <form class="create-course-form" method="post">
+            <form class="create-course-form" autocomplete="on" method="post">
                 <label for="title">Subject:</label>
                 <input class="forminput" type="text" id="subject" name="subject" required>
                 <br>
