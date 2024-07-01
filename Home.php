@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Dashboard</title>
 </head>
@@ -47,7 +47,7 @@
             <div class="cont">
                 <h1>Welcome Back, 
                 <?php
-                    include "database.php";
+                    require_once "database.php";
                     if ($user == "Admin")
                     {
                         echo "Admin";
@@ -64,7 +64,6 @@
                             <span >Total Students</span>
                             <span class = "php">
                                 <?php 
-                                    require "database.php";
                                     echo mysqli_num_rows($all_students);
                                 ?>
                             </span>
@@ -76,7 +75,6 @@
                             <span >Total Courses</span>
                             <span class = "php">
                                 <?php 
-                                    require "database.php";
                                     echo mysqli_num_rows($all_courses);
                                 ?>
                             </span>

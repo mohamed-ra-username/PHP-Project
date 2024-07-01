@@ -12,11 +12,11 @@
                 new MultiSelectTag('courses') // id
             </script>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="home.css">
-    <link rel="stylesheet" href="create.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/create.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Entries</title>
+    <title>Create Entry</title>
 </head>
 <body>
     <div class="container">
@@ -129,7 +129,8 @@
             $sql = "UPDATE `students` SET `name` = '$name', `gpa` = '$gpa', `email` = '$email', `owned_courses` = '$new_courses' WHERE `students`.`id` = $id";
 
             $test = mysqli_query($conn, $sql);
-            header("Refresh:0");
+            if ($test)
+            header("location:students.php");
         }
     ?>
 <script>

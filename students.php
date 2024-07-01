@@ -4,8 +4,8 @@
 
 
     <head>
-        <link rel="stylesheet" href="table.css">
-        <link rel="stylesheet" href="home.css">
+        <link rel="stylesheet" href="css/table.css">
+        <link rel="stylesheet" href="css/home.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
         <meta charset="UTF-8">
@@ -47,12 +47,6 @@
 
 
     <body>
-        <?php
-            $current_row = 0;
-            require_once "database.php";
-            require_once "functions.php";
-
-        ?>
 
 <div class="container">
         <nav class="nav">
@@ -66,6 +60,8 @@
         <div class="content">
             <header class="Header">
                 <?php
+                    require_once "database.php";
+
                     $url = $_SERVER['REQUEST_URI'];
                     $url = substr($url,18,strpos($url,".php"));
                     $url = substr($url,0,strpos($url,".php"));

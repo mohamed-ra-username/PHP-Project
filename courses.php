@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="home.css">
-    <link rel="stylesheet" href="table.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/table.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Dashboard</title>
 </head>
 
 <script>
         
-    function editCourses(id) {
-        window.location.href = 'edit_courses.php?id=' + id;
+    function editCourse(id) {
+        window.location.href = 'edit_course.php?id=' + id;
     }
 </script>
 <script>
 function deleteCourse(id) {
     if (confirm('Are you sure you want to delete this course?')) {
-        fetch('delete_courses.php?id=' + id, {
+        fetch('delete_course.php?id=' + id, {
             method: 'DELETE'
         })
         .then(response => response.json())
@@ -36,7 +36,7 @@ function deleteCourse(id) {
         })
         .catch(error => {
             console.error('Error:', error);
-            alert('An error occurred while deleting the course.');
+            alert('An error occurred while deleting the course.'+error);
         });
     }
 }
@@ -84,7 +84,7 @@ function deleteCourse(id) {
                     <thead>
                         <tr>
                             <?php
-                            include "database.php";
+                            require_once "database.php";
 
                             if ($user == "Admin") 
                             echo '<th class="admin-head"> Admin Panel</th>'
@@ -109,7 +109,7 @@ function deleteCourse(id) {
                             echo "<tr id='row_$id' >";
                             if ($user == "Admin") {
                                 echo '<td class="admin-panel">';
-                                echo '<button class="button btn-info" onclick="editCourses(' . $id . ')" type="button">EDIT</button>';
+                                echo '<button class="button btn-info" onclick="editCourse(' . $id . ')" type="button">EDIT</button>';
                                 echo '<button class="button btn-danger" onclick="deleteCourse(' . $id . ')" type="button">DELETE</button>';
                                 echo '</td>';
                             }
@@ -125,7 +125,7 @@ function deleteCourse(id) {
                     <?php
                         if ($user == "Admin")
                         echo  '
-                            <a class="btn-success" href="CreateCourses.php">
+                            <a class="btn-success" href="CreateCourse.php">
                             Create new
                             </a>
                         '
