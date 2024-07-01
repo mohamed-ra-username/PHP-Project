@@ -107,14 +107,36 @@
 
             <tbody>
                 <?php
+                    function get_course_from_id($id){
+                        global $conn;
+                        $courses = mysqli_query($conn, "SELECT title FROM courses where id=$id;");
+                        $course = mysqli_fetch_assoc($courses);
+                        return $course ? ucfirst($course["title"]) : "<err> Course Not Found </err>";
+                    }
+                    function get_courses($owned_courses){
+                        if (empty(strlen($owned_courses))){
+                            return "None";
+                        }
+                        else{
+                            //makes an array
+                            $owned_courses = explode(",",$owned_courses);
+                            
+                            // changes each course-id to it's corresponding course name/title
+                            $owned_courses = array_map('get_course_from_id',$owned_courses);
+
+                            //joins the array back into a string
+                            return join(", ",$owned_courses);
+                        }
+                    }
                     while ($row = mysqli_fetch_assoc($all_students)) 
                     {
-                        //defination
+                        //definations
                         $id = $row['id'] ;
                         $name = $row['name'] ;
                         $gpa = $row['gpa'] ;
                         $email = $row['email'] ;
                         $owned_courses = $row["owned_courses"];
+
                         // row details
                         echo '<tr>';
                             if ($user == "Admin"){
@@ -123,29 +145,11 @@
                                 echo '<button onclick="deleteStudent(' . $id . ')" class="button btn-danger" type="button"><span>DELETE</span></button>';
                                 echo '</td>';
                             }
+
                             echo "<td class = 'small'>" . ++$current_row . "</td> <td class = 'name'> $name</td> <td class = 'email'> $email</td> <td class = 'small'> $gpa</td>";
+                            
                             if ($user == "Admin")
-                            {
-                                echo '<td>';
-                                if($owned_courses == null)
-                                    Echo "None";
-                                else
-                                {
-                                    $owned_courses = explode(",",$owned_courses);
-                                    $i =0;
-                                    foreach ($owned_courses as $idx) {
-                                        $courses = mysqli_query($conn, "SELECT title FROM courses where id=$idx;");
-                                        $course = mysqli_fetch_assoc($courses);
-                                        
-                                        echo $course ? ucfirst($course["title"]) : "<err> Course Not Found </err>";
-                                        
-                                        if (++$i < count($owned_courses))
-                                        echo ", ";
-                                        
-                                    }
-                                }
-                                    echo '</td>';
-                            }
+                            echo "<td>" . get_courses($owned_courses) . '</td>';
                         echo '</tr>';
                     }
                 ?>
@@ -156,10 +160,11 @@
                     <tr>
                         <?php
                             if ($user == "Admin")
-                            echo  '<a class="btn-success" href="CreateStudents.php">
+                            echo '
+                                <a class="btn-success" href="CreateStudents.php">
                                 Create new
                                 </a>
-                            ';
+                                '
                         ?>
                     </tr>
                 </tr>

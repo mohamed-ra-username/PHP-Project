@@ -55,7 +55,7 @@ function deleteCourse(id) {
         
         <div class="content">
             <header class="Header">
-                <?php
+            <?php
                     $url = $_SERVER['REQUEST_URI'];
                     $url = substr($url,18,strpos($url,".php"));
                     $url = substr($url,0,strpos($url,".php"));
@@ -85,49 +85,50 @@ function deleteCourse(id) {
                         <tr>
                             <?php
                             include "database.php";
-                            if ($user == "Admin") {
-                                echo '<th class="admin-head">' . 'Admin Panel' . '</th>';
-                            }
 
-                            foreach(["ID", "Subject", "Description", "Instructor"] as $title) {
-                                echo '<th>' . " $title" . '</th>';
-                            }
-                            ?>        
+                            if ($user == "Admin") 
+                            echo '<th class="admin-head"> Admin Panel</th>'
+                            ?>
+
+                            <th> ID </th>
+                            <th> Subject</th>
+                            <th> Description </th>
+                            <th> Instructor </th>
+
                         </tr>
                     </thead>
 
                     <tbody>
-    <?php
-    foreach ($all_courses as $item) {
-        $id = $item["id"];
-        $title = $item["title"];
-        $description = $item["description"];
-        $instructor = $item["instructor"];
-        
-        echo '<tr id="row_' . $id . '">';
-        if ($user == "Admin") {
-            echo '<td class="admin-panel">';
-            echo '<button class="button btn-info" onclick="editCourses(' . $id .')" type="button">EDIT</button>';
-            echo '<button class="button btn-danger" onclick="deleteCourse(' . $id . ')" type="button">DELETE</button>';
-            echo '</td>';
-        }
-        echo "<td class='small'>" . $id . "</td>";
-        echo "<td class='title'>" . $title . "</td>";
-        echo "<td class='description'>" . $description . "</td>";
-        echo "<td class='instructor'>" . $instructor . "</td>";
-        echo '</tr>';
-    } 
-    ?>
-</tbody>
-
+                        <?php
+                        foreach ($all_courses as $item) {
+                            $id = $item["id"];
+                            $title = $item["title"];
+                            $description = $item["description"];
+                            $instructor = $item["instructor"];
+                            
+                            echo "<tr id='row_$id' >";
+                            if ($user == "Admin") {
+                                echo '<td class="admin-panel">';
+                                echo '<button class="button btn-info" onclick="editCourses(' . $id . ')" type="button">EDIT</button>';
+                                echo '<button class="button btn-danger" onclick="deleteCourse(' . $id . ')" type="button">DELETE</button>';
+                                echo '</td>';
+                            }
+                            echo "<td class='small'> $id </td>";
+                            echo "<td class='title'> $title </td>";
+                            echo "<td class='description'> $description </td>";
+                            echo "<td class='instructor'> $instructor </td>";
+                            echo '</tr>';
+                        } 
+                        ?>
+                    </tbody>
 
                     <?php
-                        if ($user == "Admin"){
-                            echo  '<a class="btn-success" href="CreateCourses.php">
-                                Create new
-                                </a>
-                            ';
-                        }
+                        if ($user == "Admin")
+                        echo  '
+                            <a class="btn-success" href="CreateCourses.php">
+                            Create new
+                            </a>
+                        '
                     ?>
                 </table>
             </div>

@@ -76,7 +76,7 @@
             $description = $post["description"];
             $instructor = $post["instructor"];
     
-            $sql ="INSERT INTO `courses` (`id`, `description`, `title`, `instructor`, `owned_courses`) VALUES (NULL, '$description', '$title', '$instructor', NULL)";
+            $sql ="INSERT INTO `courses` (`id`, `description`, `title`, `instructor`) VALUES (NULL, '$description', '$title', '$instructor')";
             $test = mysqli_query($conn, $sql);
         }
     ?>
