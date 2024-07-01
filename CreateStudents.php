@@ -108,6 +108,8 @@
 </body>
 
 <script>
+    document.getElementById("name").focus();
+
     new MultiSelectTag('courses')  // id
 </script>
 </html>

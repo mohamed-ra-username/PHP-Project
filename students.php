@@ -28,10 +28,6 @@
         .then(response => response.json())
         .then(data => {
             if (data.success) {
-                var row = document.getElementById('row_' + id);
-                if (row) {
-                    row.parentNode.removeChild(row);
-                }
                 window.location.href = 'Students.php';
             } else {
                 alert('Error deleting student: ' + data.message);
@@ -135,7 +131,7 @@
                         $owned_courses = $row["owned_courses"];
 
                         // admin panel
-                        echo '<tr>';
+                        echo "<tr id ='row_$id'>";
                             if ($user == "Admin"){
                                 echo '<td class = "admin-panel">';
                                 echo '<button onclick="editStudent(' . $id . ')" class="button btn-info" type="button"><span>EDIT</span></button>';

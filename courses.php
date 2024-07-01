@@ -24,19 +24,14 @@ function deleteCourse(id) {
         .then(response => response.json())
         .then(data => {
             if (data.success) {
-                var row = document.getElementById('row_' + id);
-                if (row) {
-                    row.parentNode.removeChild(row);
-                }
                 window.location.href = 'Courses.php';
-
             } else {
-                alert('Error deleting course: ' + data.message);
+                alert('Error deleting course\n ' + data.message);
             }
         })
         .catch(error => {
             console.error('Error:', error);
-            alert('An error occurred while deleting the course.'+error);
+            alert('An error occurred while deleting the course.\n'+error);
         });
     }
 }

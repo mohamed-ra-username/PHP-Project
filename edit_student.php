@@ -134,6 +134,8 @@
         }
     ?>
 <script>
+    document.getElementById("name").focus();
+
     new MultiSelectTag('courses')
 </script>
 </html>
