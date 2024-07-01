@@ -83,7 +83,7 @@
                         $old_courses = $data["owned_courses"];
                     ?>
                     <label for='student-name'>Name:</label>
-                    <input class='forminput' type='text' id='student-name' name='name' value ='<?php echo $old_name?>' required>
+                    <input class='forminput' type='text' id='student-name' name='name' value ='<?php echo $old_name?>' autofocus required>
                     <br>
 
                     <label for='gpa'>GPA:</label>
@@ -134,8 +134,6 @@
         }
     ?>
 <script>
-    document.getElementById("name").focus();
-
     new MultiSelectTag('courses')
 </script>
 </html>

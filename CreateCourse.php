@@ -51,7 +51,7 @@
             <h1>Add Course</h1>
             <form class="create-course-form" autocomplete="on" method="post">
                 <label for="title">Subject:</label>
-                <input class="forminput" type="text" id="subject" name="subject" required>
+                <input class="forminput" type="text" id="subject" name="subject" autofocus required>
                 <br>
                 <label for="description">Description:</label>
                 <input class="forminput" type="text" id="description" name="description" required>

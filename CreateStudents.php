@@ -57,7 +57,7 @@
             <h1>Add Students</h1>
             <form class="create-course-form" autocomplete="on" method="post">
                 <label for="name">Name:</label>
-                <input class="forminput" autocomplete="name" type="text" id="name" name="name" required>
+                <input class="forminput" autocomplete="name" type="text" id="name" name="name" autofocus required>
                 <br>
                 <label for="gpa">GPA:</label>
                 <input class="forminput" autocomplete="off" type="number" inputmode="numeric" step = ".1" id="gpa" name="gpa" max='4' min = '0' required>
@@ -108,8 +108,6 @@
 </body>
 
 <script>
-    document.getElementById("name").focus();
-
     new MultiSelectTag('courses')  // id
 </script>
 </html>

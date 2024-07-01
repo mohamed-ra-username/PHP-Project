@@ -74,7 +74,7 @@
                 <h1>Edit Course</h1>
                 <form class='create-course-form' autocomplete='on' method='post'>
                     <label for='subject'>Subject:</label>
-                    <input class='forminput' type='text' id='subject' name='subject' value='<?php echo $old_subject?>' required>
+                    <input class='forminput' type='text' id='subject' name='subject' value='<?php echo $old_subject?>' autofocus required>
                     <br>
                     <label for='description'>Description:</label>
                     <input class='forminput' type='text' id='description' name='description' value='<?php echo $old_description?>' required>
