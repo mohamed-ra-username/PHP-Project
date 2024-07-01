@@ -94,7 +94,8 @@
             <thead>
                 <tr>
                     <?php 
-                    if ($user == "Admin") echo '<th class = "admin-head">' . 'Admin Panel' . '</th>';?>
+                    if ($user == "Admin") echo '<th class = "admin-head">' . 'Admin Panel' . '</th>';
+                    ?>
 
                     <th>ID</th>
                     <th>NAME</th>
