@@ -138,7 +138,7 @@
                         $email = $row['email'] ;
                         $owned_courses = $row["owned_courses"];
 
-                        // row details
+                        // admin panel
                         echo '<tr>';
                             if ($user == "Admin"){
                                 echo '<td class = "admin-panel">';
@@ -147,7 +147,7 @@
                                 echo '</td>';
                             }
 
-                            echo "<td class = 'small'>" . ++$current_row . "</td> <td class = 'name'> $name</td> <td class = 'email'> $email</td> <td class = 'small'> $gpa</td>";
+                            echo "<td class = 'small'>" . $id . "</td> <td class = 'name'> $name</td> <td class = 'email'> $email</td> <td class = 'small'> $gpa</td>";
                             
                             if ($user == "Admin")
                             echo "<td>" . get_courses($owned_courses) . '</td>';

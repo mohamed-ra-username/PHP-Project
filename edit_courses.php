@@ -51,11 +51,19 @@
             <div class="cont">
 
             <?php
-                if (isset($_GET["id"]))
-                {
-                    $id = $_GET["id"];
-                    $found = mysqli_query($conn,"SELECT * FROM courses where id=$id;");
+                $has_id = isset($_GET["id"]) && strlen($_GET["id"]);
+
+                if (empty($has_id)){
+                    header("location:courses.php");
                 }
+                else{
+                    $id = $_GET["id"];
+                    $query = "SELECT * FROM courses where id=$id;";
+                    $found = mysqli_query($conn,$query);
+                    if ( !(mysqli_num_rows($found)))
+                    header("location:courses.php");
+                }
+
                 $data = mysqli_fetch_assoc($found);
                 $old_description = $data["description"];
                 $old_subject = $data["title"];
@@ -90,6 +98,7 @@
     
             $sql = "UPDATE `courses` SET `description` = '$description', `title` = '$subject', `instructor` = '$instructor' WHERE `courses`.`id` = $id";
             $test = mysqli_query($conn, $sql);
+            header("Refresh:0");
         }
     ?>
 </body>
