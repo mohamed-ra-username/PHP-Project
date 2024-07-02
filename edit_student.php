@@ -1,6 +1,9 @@
 
 <?php
-    include "database.php";
+    require_once "database.php";
+    
+    if($user != "Admin")
+    header("location:Students.php");
     ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,22 +35,7 @@
         <div class="content">
             <header class="Header">
                 <?php
-                    $url = $_SERVER['REQUEST_URI'];
-                    $url = substr($url,18,strpos($url,".php"));
-                    $url = substr($url,0,strpos($url,".php"));
-                    $url = ucfirst($url);
-                    
-                    if ($url == "Home")
-                    {
-                        echo '<span class="Home"><i class="fa fa-home"></i>';
-                    }if ($url == "Students")
-                    {
-                        echo '<span class="Home"><i class="fa fa-address-card"></i>';
-                    }if ($url == "Courses")
-                    {
-                        echo '<span class="Home"><i class="fa fa-graduation-cap"></i>';
-                    }
-                    echo $url;
+                    require_once "site_name.php"
                 ?>
                 </span>
                 <div class="Search">
@@ -55,14 +43,8 @@
                     <input type="search" placeholder="Search">
                 </div>
             </header>
-            
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@3.0.1/dist/css/multi-select-tag.css">
-            <script src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@3.0.1/dist/js/multi-select-tag.js"></script>
 
-            <div class="cont">
-                <h1>Edit Student</h1>
-                <form class='create-student-form' autocomplete="on" method='post'>
-                    <?php
+            <?php
                         $has_id = isset($_GET["id"]) && strlen($_GET["id"]);
 
                         if (empty($has_id)){
@@ -82,6 +64,14 @@
                         $old_gpa = $data["gpa"];
                         $old_courses = $data["owned_courses"];
                     ?>
+
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@3.0.1/dist/css/multi-select-tag.css">
+            <script src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@3.0.1/dist/js/multi-select-tag.js"></script>
+
+            <div class="cont">
+                <h1>Editing '<?php echo $old_name?>' </h1>
+                <form class='create-student-form' autocomplete="on" method='post'>
+                   
                     <label for='student-name'>Name:</label>
                     <input class='forminput' type='text' id='student-name' name='name' value ='<?php echo $old_name?>' autofocus required>
                     <br>

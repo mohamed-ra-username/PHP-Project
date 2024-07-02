@@ -1,5 +1,8 @@
 <?php
-        include "database.php";
+        require_once "database.php";
+        
+        if($user != "Admin")
+        header("location:Courses.php");
 
         $has_id = isset($_GET["id"]) && strlen($_GET["id"]);
         

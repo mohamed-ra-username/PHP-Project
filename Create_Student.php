@@ -24,24 +24,12 @@
         <div class="content">
             <header class="Header">
                 <?php
-                    include "database.php";
+                    require_once "site_name.php";
+                    require_once "database.php";
 
-                    $url = $_SERVER['REQUEST_URI'];
-                    $url = substr($url,18,strpos($url,".php"));
-                    $url = substr($url,0,strpos($url,".php"));
-                    $url = ucfirst($url);
                     
-                    if ($url == "Home")
-                    {
-                        echo '<span class="Home"><i class="fa fa-home"></i>';
-                    }if ($url == "Students")
-                    {
-                        echo '<span class="Home"><i class="fa fa-address-card"></i>';
-                    }if ($url == "Courses")
-                    {
-                        echo '<span class="Home"><i class="fa fa-graduation-cap"></i>';
-                    }
-                    echo $url;
+                    if($user != "Admin")
+                    header("location:students.php");
                 ?>
                 </span>
                 <div class="Search">
@@ -54,7 +42,7 @@
             <div>
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@3.0.1/dist/css/multi-select-tag.css">
             <script src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@3.0.1/dist/js/multi-select-tag.js"></script>
-            <h1>Add Students</h1>
+            <h1>New Entry</h1>
             <form class="create-course-form" autocomplete="on" method="post">
                 <label for="name">Name:</label>
                 <input class="forminput" autocomplete="name" type="text" id="name" name="name" autofocus required>
@@ -87,6 +75,7 @@
     </div>
 </div>
     <?php
+        
         if (isset($_POST["new"])){
 
             $post = $_POST;

@@ -22,22 +22,11 @@
         <div class="content">
             <header class="Header">
                 <?php
-                    $url = $_SERVER['REQUEST_URI'];
-                    $url = substr($url,18,strpos($url,".php"));
-                    $url = substr($url,0,strpos($url,".php"));
-                    $url = ucfirst($url);
-                    
-                    if ($url == "Home")
-                    {
-                        echo '<span class="Home"><i class="fa fa-home"></i>';
-                    }if ($url == "Students")
-                    {
-                        echo '<span class="Home"><i class="fa fa-address-card"></i>';
-                    }if ($url == "Courses")
-                    {
-                        echo '<span class="Home"><i class="fa fa-graduation-cap"></i>';
-                    }
-                    echo $url;
+                    require_once "site_name.php";
+                    require_once "database.php";
+        
+                if($user != "Admin")
+                header("location:Courses.php");
                 ?>
                 </span>
                 <div class="Search">
@@ -48,7 +37,7 @@
             <div class="cont">
 
             <div>
-            <h1>Add Course</h1>
+            <h1>New Course</h1>
             <form class="create-course-form" autocomplete="on" method="post">
                 <label for="title">Subject:</label>
                 <input class="forminput" type="text" id="subject" name="subject" autofocus required>
@@ -66,8 +55,6 @@
 </div>
 
     <?php
-        include "database.php";
-        
         $post = $_POST;
 
         if (isset($post["subject"]))

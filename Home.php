@@ -21,22 +21,7 @@
         <div class="content">
             <header class="Header">
                 <?php
-                    $url = $_SERVER['REQUEST_URI'];
-                    $url = substr($url,18,strpos($url,".php"));
-                    $url = substr($url,0,strpos($url,".php"));
-                    $url = ucfirst($url);
-                    
-                    if ($url == "Home")
-                    {
-                        echo '<span class="Home"><i class="fa fa-home"></i>';
-                    }if ($url == "Students")
-                    {
-                        echo '<span class="Home"><i class="fa fa-address-card"></i>';
-                    }if ($url == "Courses")
-                    {
-                        echo '<span class="Home"><i class="fa fa-graduation-cap"></i>';
-                    }
-                    echo $url;
+                    require_once "site_name.php"
                 ?>
                 </span>
                 <div class="Search">

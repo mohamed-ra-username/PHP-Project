@@ -1,5 +1,8 @@
 <?php
-    include "database.php";
+    require_once "database.php";
+    
+    if($user != "Admin")
+    header("location:Courses.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,22 +28,7 @@
         <div class="content">
             <header class="Header">
                 <?php
-                    $url = $_SERVER['REQUEST_URI'];
-                    $url = substr($url,18,strpos($url,".php"));
-                    $url = substr($url,0,strpos($url,".php"));
-                    $url = ucfirst($url);
-                    
-                    if ($url == "Home")
-                    {
-                        echo '<span class="Home"><i class="fa fa-home"></i>';
-                    }if ($url == "Students")
-                    {
-                        echo '<span class="Home"><i class="fa fa-address-card"></i>';
-                    }if ($url == "Courses")
-                    {
-                        echo '<span class="Home"><i class="fa fa-graduation-cap"></i>';
-                    }
-                    echo $url;
+                    require_once "site_name.php"
                 ?>
                 </span>
                 <div class="Search">
@@ -65,13 +53,13 @@
                 }
 
                 $data = mysqli_fetch_assoc($found);
-                $old_description = $data["description"];
                 $old_subject = $data["title"];
+                $old_description = $data["description"];
                 $old_instructor = $data["instructor"];
                 ?>
                 
             <div>
-                <h1>Edit Course</h1>
+                <h1>Editing '<?php echo $old_subject?>'</h1>
                 <form class='create-course-form' autocomplete='on' method='post'>
                     <label for='subject'>Subject:</label>
                     <input class='forminput' type='text' id='subject' name='subject' value='<?php echo $old_subject?>' autofocus required>
@@ -82,7 +70,7 @@
                     <label for='instructor'>Instructor:</label>
                     <input class='forminput' type='text' id='instructor' name='instructor' value='<?php echo $old_instructor?>' required>
                     <br>
-                    <button type='submit'>Edit Course</button>
+                    <button type='submit'>Edit</button>
                 </form>
 
             </div>
